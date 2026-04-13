@@ -57,7 +57,7 @@ const About = () => {
         </section>
       </div>
 
-      <div className="w-full bg-amber-300 mt-10 py-10">
+      <div className="w-full bg-amber-100 mt-10 py-10">
   <div className=" w-[80%] mx-auto flex flex-col md:flex-row md:space-x-10 md:space-y-0">
 
     {/* Text Section */}
