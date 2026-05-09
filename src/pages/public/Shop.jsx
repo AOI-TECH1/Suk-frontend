@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PublicRoute = () => {
+const Shop = () => {
   return (
     <div>
-      
+      This is shop
     </div>
   )
 }
 
-export default PublicRoute
+export default Shop
