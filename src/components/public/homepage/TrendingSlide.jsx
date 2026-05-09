@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import slide1 from "../../assets/images/cat-back.jpg";
+import slide1 from "../../../assets/images/cat-back.jpg";
 
 function TrendySlide() {
   const [index, setIndex] = useState(0);
