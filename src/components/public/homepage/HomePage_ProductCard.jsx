@@ -8,10 +8,10 @@ import {
 } from "react-bootstrap";
 
 import { Heart, Eye } from "react-bootstrap-icons";
-import camera from "../../assets/images/Canon Camera.png";
-import laptop from "../../assets/images/laptop.png";
-import boot from "../../assets/images/boot.png";
-import gamepad from "../../assets/images/Game-pads.png";
+import camera from "../../../assets/images/Canon Camera.png";
+import laptop from "../../../assets/images/laptop.png";
+import boot from "../../../assets/images/boot.png";
+import gamepad from "../../../assets/images/Game-pads.png";
 
 
 // Temporary Products (will come from backend later)
