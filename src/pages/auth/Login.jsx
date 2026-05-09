@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { loginUser } from '../../api/authApi';
 import toast from 'react-hot-toast';
-import Img from '../../assets/Frame.png'; // Your student's image
+// import Img from '../../assets/Frame.png'; // Your student's image
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -109,11 +109,11 @@ const Login = () => {
 
         {/* RIGHT SIDE: IMAGE */}
         <div className="hidden md:flex justify-center bg-orange-50 rounded-[40px] p-10 h-full items-center">
-          <img 
+          {/* <img 
             src={Img} 
             alt="SuK Shopping" 
             className="w-full h-auto object-contain transform hover:scale-105 transition-transform duration-500" 
-          />
+          /> */}
         </div>
 
       </div>
