@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import slider from "../../../assets/images/home-slider.jpg";
+import slider from "../../../assets/images/Furniture.jpg";
 
 const slides = [
   {

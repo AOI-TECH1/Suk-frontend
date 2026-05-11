@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 
 // 1. CONTEXT & LAYOUTS
 import { AuthProvider } from './context/AuthContext';
@@ -36,6 +36,7 @@ import AdManagement from './pages/staff/Ads';
 function App() {
   return (
     <AuthProvider>
+      <BrowserRouter>
       <Routes>
         
         {/* --- PUBLIC AREA (Navbar & Footer visible) --- */}
@@ -81,6 +82,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
 
       </Routes>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
