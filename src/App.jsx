@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // 1. CONTEXT & LAYOUTS
 import { AuthProvider } from './context/AuthContext';
@@ -32,6 +32,7 @@ import AddProduct from './pages/seller/AddProduct';
 import AdminDashboard from './pages/staff/AdminDashboard';
 import UserManagement from './pages/staff/UserMgmt';
 import AdManagement from './pages/staff/Ads';
+import BuyerRegister from './pages/auth/BuyerRegister';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route element={<PublicRoute />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/buyerregister" element={<BuyerRegister />} />
           </Route>
         </Route>
 
