@@ -1,24 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Spinner, Alert } from "react-bootstrap";
 import { Heart, Eye } from "react-bootstrap-icons";
 
 // Import your API helper
 import { getAllProducts } from "../../../api/productApi";
 
 function ProductSection() {
-  // 1. Create state to hold the info pulled from backend
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // 2. Pull the info when the component loads
   useEffect(() => {
     const fetchInfo = async () => {
       try {
         const res = await getAllProducts();
-        // Django returns the data in res.data
+        
+        // --- DEBUG LOGS ---
+        console.log("Full API Response:", res);
+        console.log("Product Data pulled:", res.data);
+        
+        if (res.data.length === 0) {
+          console.warn("Backend returned 200 OK, but the product list is empty []");
+        }
+        // ------------------
+
         setProducts(res.data);
       } catch (error) {
-        console.error("Error pulling products from SuK backend:", error);
+        // --- ERROR LOGS ---
+        console.error("Error pulling products from SuK backend:");
+        if (error.response) {
+          console.error("Data:", error.response.data);
+          console.error("Status:", error.response.status);
+          setError(`Backend Error: ${error.response.status}`);
+        } else if (error.request) {
+          console.error("Request made but no response received");
+          setError("No response from server. Check if Django is running.");
+        } else {
+          console.error("Error Message:", error.message);
+          setError(error.message);
+        }
       } finally {
         setLoading(false);
       }
@@ -27,101 +47,113 @@ function ProductSection() {
     fetchInfo();
   }, []);
 
-  // 3. Show a spinner while the info is being pulled
   if (loading) {
     return (
       <div className="text-center py-5">
         <Spinner animation="border" variant="warning" />
-        <p className="mt-2">Loading SuK Products...</p>
+        <p className="mt-2 text-muted uppercase font-bold text-xs">Fetching SuK Inventory...</p>
       </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container className="mt-4">
+        <Alert variant="danger">
+          <Alert.Heading>Connection Issue</Alert.Heading>
+          <p>{error}</p>
+        </Alert>
+      </Container>
     );
   }
 
   return (
     <section className="py-5 bg-light">
       <Container>
-        {/* Section Title */}
-        <h2 className="text-center mb-4">Explore Our Products</h2>
+        <h2 className="text-center mb-5 fw-bold">Explore Our Products</h2>
 
-        <Row>
-          {products.map((product) => (
-            <Col key={product.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-              <Card className="position-relative h-100 shadow-sm">
-                
-                {/* NEW Badge - checking the field from your Django model */}
-                {product.is_new && (
-                  <span
-                    className="badge bg-success position-absolute"
-                    style={{ top: "10px", left: "10px", zIndex: 10 }}
-                  >
-                    NEW
-                  </span>
-                )}
-
-                {/* Icons */}
-                <div
-                  className="position-absolute d-flex flex-column gap-2"
-                  style={{ top: "10px", right: "10px", zIndex: 10 }}
-                >
-                  <Button variant="light" size="sm">
-                    <Heart size={16} />
-                  </Button>
-                  <Button variant="light" size="sm">
-                    <Eye size={16} />
-                  </Button>
-                </div>
-
-                {/* Product Image - pulling from 'main_image' (Cloudinary URL) */}
-                <Card.Img
-                  variant="top"
-                  src={product.main_image} 
-                  style={{
-                    height: "200px",
-                    objectFit: "contain",
-                    padding: "15px"
-                  }}
-                />
-
-                <Card.Body>
-                  {/* Product Name */}
-                  <Card.Title style={{ fontSize: "16px" }}>
-                    {product.name}
-                  </Card.Title>
-
-                  {/* Price */}
-                  <div className="mb-2">
-                    <span className="text-success fw-bold">
-                       ₦{Number(product.final_price).toLocaleString()}
+        {products.length === 0 ? (
+          <div className="text-center py-5 border rounded bg-white">
+            <p className="text-muted">No active products found in the database.</p>
+          </div>
+        ) : (
+          <Row>
+            {products.map((product) => (
+              <Col key={product.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
+                <Card className="position-relative h-100 shadow-sm border-0">
+                  
+                  {/* NEW Badge */}
+                  {product.is_new && (
+                    <span
+                      className="badge bg-success position-absolute"
+                      style={{ top: "15px", left: "15px", zIndex: 10 }}
+                    >
+                      NEW
                     </span>
+                  )}
 
-                    {/* Only show old price if a discount exists */}
-                    {product.price > product.final_price && (
-                      <span className="text-muted text-decoration-line-through ms-2">
-                         ₦ {Number(product.price).toLocaleString()}
-                      </span>
-                    )}
+                  {/* Action Icons */}
+                  <div
+                    className="position-absolute d-flex flex-column gap-2"
+                    style={{ top: "15px", right: "15px", zIndex: 10 }}
+                  >
+                    <Button variant="white" className="shadow-sm rounded-circle p-2 bg-white">
+                      <Heart size={16} className="text-danger" />
+                    </Button>
+                    <Button variant="white" className="shadow-sm rounded-circle p-2 bg-white">
+                      <Eye size={16} />
+                    </Button>
                   </div>
 
-                  {/* Rating */}
-                  <div className="mb-2 text-warning">
-                    ⭐⭐⭐⭐⭐
-                    <span className="text-muted ms-1">
-                      ({product.review_count || 0})
-                    </span>
-                  </div>
+                  {/* Product Image - Field names adjusted for typical Django Serializer names */}
+                  <Card.Img
+                    variant="top"
+                    src={product.product_image || product.main_image} 
+                    style={{
+                      height: "220px",
+                      objectFit: "contain",
+                      padding: "20px",
+                      backgroundColor: "#f8f9fa"
+                    }}
+                  />
 
-                  {/* Add to Cart */}
-                  <Button
-                    variant="warning"
-                    className="w-100 text-white rounded-pill"
-                  >
-                    🛒 Add to cart
-                  </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+                  <Card.Body className="d-flex flex-column">
+                    <Card.Title className="text-dark truncate" style={{ fontSize: "15px" }}>
+                      {product.name}
+                    </Card.Title>
+
+                    <div className="mt-auto">
+                      <div className="d-flex align-items-center gap-2 mb-2">
+                        {/* Displaying prices based on your screenshot's field names */}
+                        <span className="text-success fw-bold fs-5">
+                          ₦{Number(product.discounted_price || product.final_price || product.price).toLocaleString()}
+                        </span>
+
+                        {product.discounted_price && product.price > product.discounted_price && (
+                          <span className="text-muted text-decoration-line-through small">
+                            ₦{Number(product.price).toLocaleString()}
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="mb-3 text-warning small">
+                        ⭐⭐⭐⭐⭐
+                        <span className="text-muted ms-1">({product.review_count || 0})</span>
+                      </div>
+
+                      <Button
+                        variant="warning"
+                        className="w-100 text-dark fw-bold rounded-3 py-2"
+                      >
+                        🛒 Add to cart
+                      </Button>
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        )}
       </Container>
     </section>
   );
