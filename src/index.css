@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 
-a{
+footer a{
     color: white;
     text-decoration: none !important;
 }
 
 
-a:hover{
+footer a:hover{
     color: #FBA834;
 }
+
+

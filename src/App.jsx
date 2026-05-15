@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // 1. CONTEXT & LAYOUTS
 import { AuthProvider } from './context/AuthContext';
@@ -13,10 +13,13 @@ import PublicRoute from './routes/PublicRoute';
 import Home from './pages/public/Home';
 import Shop from './pages/public/Shop';
 import ProductDetail from './pages/public/ProductDetail';
+import Cart from './pages/public/Cart'; 
+import Checkout from './pages/public/Checkout';
 
 // 4. AUTH PAGES
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import SellerOnboarding from './pages/auth/SellerOnboarding';
 
 // 5. BUYER PAGES
 import BuyerDashboard from './pages/buyer/Dashboard';
@@ -32,58 +35,62 @@ import AddProduct from './pages/seller/AddProduct';
 import AdminDashboard from './pages/staff/AdminDashboard';
 import UserManagement from './pages/staff/UserMgmt';
 import AdManagement from './pages/staff/Ads';
-import BuyerRegister from './pages/auth/BuyerRegister';
+
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-      <Routes>
-        
-        {/* --- PUBLIC AREA (Navbar & Footer visible) --- */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          
-          {/* AUTH - Only show if user is NOT logged in */}
+        <Routes>
+
+          {/* --- PUBLIC AREA (Navbar & Footer visible) --- */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />      
+            <Route path="/checkout" element={<Checkout />} />
+             
+         
+
+              {/* AUTH - Only show if user is NOT logged in */}
           <Route element={<PublicRoute />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/buyerregister" element={<BuyerRegister />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/seller-onboarding" element={<SellerOnboarding />} />
+            </Route>
           </Route>
-        </Route>
 
-        {/* --- BUYER AREA (Must be logged in) --- */}
-        <Route element={<ProtectedRoute allowedRoles={['BUYER', 'SELLER', 'ADMIN', 'MANAGER']} />}>
-          <Route element={<MainLayout />}>
-             <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
-             <Route path="/buyer/orders" element={<BuyerOrders />} />
-             <Route path="/buyer/settings" element={<BuyerSettings />} />
+          {/* --- BUYER AREA (Must be logged in) --- */}
+          <Route element={<ProtectedRoute allowedRoles={['BUYER', 'SELLER', 'ADMIN', 'MANAGER']} />}>
+            <Route element={<MainLayout />}>
+              <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
+              <Route path="/buyer/orders" element={<BuyerOrders />} />
+              <Route path="/buyer/settings" element={<BuyerSettings />} />
+            </Route>
           </Route>
-        </Route>
 
-        {/* --- SELLER AREA (Must be a SELLER) --- */}
-        <Route element={<ProtectedRoute allowedRoles={['SELLER']} />}>
-          {/* Sellers usually have a different sidebar, so we might use a different layout later */}
-          <Route element={<MainLayout />}>
-            <Route path="/seller/dashboard" element={<SellerDashboard />} />
-            <Route path="/seller/products" element={<SellerProducts />} />
-            <Route path="/seller/add-product" element={<AddProduct />} />
+          {/* --- SELLER AREA (Must be a SELLER) --- */}
+          <Route element={<ProtectedRoute allowedRoles={['SELLER']} />}>
+            {/* Sellers usually have a different sidebar, so we might use a different layout later */}
+            <Route element={<MainLayout />}>
+              <Route path="/seller/dashboard" element={<SellerDashboard />} />
+              <Route path="/seller/products" element={<SellerProducts />} />
+              <Route path="/seller/add-product" element={<AddProduct />} />
+            </Route>
           </Route>
-        </Route>
 
-        {/* --- STAFF AREA (Manager / Admin Only) --- */}
-        <Route element={<ProtectedRoute allowedRoles={['ADMIN', 'MANAGER']} />}>
-          <Route path="/staff/dashboard" element={<AdminDashboard />} />
-          <Route path="/staff/users" element={<UserManagement />} />
-          <Route path="/staff/ads" element={<AdManagement />} />
-        </Route>
+          {/* --- STAFF AREA (Manager / Admin Only) --- */}
+          <Route element={<ProtectedRoute allowedRoles={['ADMIN', 'MANAGER']} />}>
+            <Route path="/staff/dashboard" element={<AdminDashboard />} />
+            <Route path="/staff/users" element={<UserManagement />} />
+            <Route path="/staff/ads" element={<AdManagement />} />
+          </Route>
 
-        {/* --- 404 NOT FOUND --- */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+          {/* --- 404 NOT FOUND --- */}
+          <Route path="*" element={<Navigate to="/" replace />} />
 
-      </Routes>
+        </Routes>
       </BrowserRouter>
     </AuthProvider>
   );
