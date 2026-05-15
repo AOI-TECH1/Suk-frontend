@@ -21,11 +21,12 @@ import FAQ from './pages/public/FAQ';
 import GoodsService from './pages/public/GoodServices';
 import PrivacyPolicy from './pages/public/PrivacyPolicy';
 import Cart from './pages/public/Cart'; // ONLY ONE IMPORT HERE
+import Checkout from './pages/public/Checkout';
 
 // 4. AUTH PAGES
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
-import BuyerRegister from './pages/auth/BuyerRegister';
+import SellerOnboarding from './pages/auth/SellerOnboarding';
 
 // 5. BUYER PAGES
 import BuyerDashboard from './pages/buyer/Dashboard';
@@ -63,6 +64,48 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} />      
+            <Route path="/checkout" element={<Checkout />} />
+             
+         
+
+              {/* AUTH - Only show if user is NOT logged in */}
+          <Route element={<PublicRoute />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/seller-onboarding" element={<SellerOnboarding />} />
+            </Route>
+          </Route>
+
+          {/* --- BUYER AREA (Must be logged in) --- */}
+          <Route element={<ProtectedRoute allowedRoles={['BUYER', 'SELLER', 'ADMIN', 'MANAGER']} />}>
+            <Route element={<MainLayout />}>
+              <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
+              <Route path="/buyer/orders" element={<BuyerOrders />} />
+              <Route path="/buyer/settings" element={<BuyerSettings />} />
+            </Route>
+          </Route>
+
+          {/* --- SELLER AREA (Must be a SELLER) --- */}
+          <Route element={<ProtectedRoute allowedRoles={['SELLER']} />}>
+            {/* Sellers usually have a different sidebar, so we might use a different layout later */}
+            <Route element={<MainLayout />}>
+              <Route path="/seller/dashboard" element={<SellerDashboard />} />
+              <Route path="/seller/products" element={<SellerProducts />} />
+              <Route path="/seller/add-product" element={<AddProduct />} />
+            </Route>
+          </Route>
+
+          {/* --- STAFF AREA (Manager / Admin Only) --- */}
+          <Route element={<ProtectedRoute allowedRoles={['ADMIN', 'MANAGER']} />}>
+            <Route path="/staff/dashboard" element={<AdminDashboard />} />
+            <Route path="/staff/users" element={<UserManagement />} />
+            <Route path="/staff/ads" element={<AdManagement />} />
+          </Route>
+
+          {/* --- 404 NOT FOUND --- */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+
             <Route path="/cart" element={<Cart />} /> 
             
             <Route path="/terms" element={<Terms />} />
@@ -76,7 +119,7 @@ function App() {
             <Route element={<PublicRoute />}>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/buyerregister" element={<BuyerRegister />} />
+            
             </Route>
           </Route>
 
