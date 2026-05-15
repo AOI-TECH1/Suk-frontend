@@ -6,7 +6,7 @@ import { FaHeadphonesAlt } from "react-icons/fa";
 
 const BrowserByCategory = () => {
   return (
-    <div className="px-4">
+    <div className="px-4 pb-4">
       <h1 className='text-center text-lg sm:text-xl font-bold py-7'>
         Browse By Category
       </h1>

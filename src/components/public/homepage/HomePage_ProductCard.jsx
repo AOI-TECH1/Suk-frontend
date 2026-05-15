@@ -1,160 +1,122 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Card, Button, Spinner, Alert } from "react-bootstrap";
-import { Heart, Eye } from "react-bootstrap-icons";
-
-// Import your API helper
+import { Link } from "react-router-dom";
+import { Heart, Eye, ShoppingCart, Star } from "lucide-react"; 
 import { getAllProducts } from "../../../api/productApi";
+import toast from "react-hot-toast";
 
 function ProductSection() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchInfo = async () => {
       try {
         const res = await getAllProducts();
-        
-        // --- DEBUG LOGS ---
-        console.log("Full API Response:", res);
-        console.log("Product Data pulled:", res.data);
-        
-        if (res.data.length === 0) {
-          console.warn("Backend returned 200 OK, but the product list is empty []");
-        }
-        // ------------------
-
-        setProducts(res.data);
+        const data = res.data.results ? res.data.results : res.data;
+        setProducts(data);
       } catch (error) {
-        // --- ERROR LOGS ---
-        console.error("Error pulling products from SuK backend:");
-        if (error.response) {
-          console.error("Data:", error.response.data);
-          console.error("Status:", error.response.status);
-          setError(`Backend Error: ${error.response.status}`);
-        } else if (error.request) {
-          console.error("Request made but no response received");
-          setError("No response from server. Check if Django is running.");
-        } else {
-          console.error("Error Message:", error.message);
-          setError(error.message);
-        }
+        console.error("SuK API Error:", error);
+        toast.error("Unable to load products.");
       } finally {
         setLoading(false);
       }
     };
-
     fetchInfo();
   }, []);
 
   if (loading) {
     return (
-      <div className="text-center py-5">
-        <Spinner animation="border" variant="warning" />
-        <p className="mt-2 text-muted uppercase font-bold text-xs">Fetching SuK Inventory...</p>
+      <div className="flex justify-center py-20">
+        <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-[#fbb03b]"></div>
       </div>
     );
   }
 
-  if (error) {
-    return (
-      <Container className="mt-4">
-        <Alert variant="danger">
-          <Alert.Heading>Connection Issue</Alert.Heading>
-          <p>{error}</p>
-        </Alert>
-      </Container>
-    );
-  }
-
   return (
-    <section className="py-5 bg-light">
-      <Container>
-        <h2 className="text-center mb-5 fw-bold">Explore Our Products</h2>
+    <section className="py-12 px-4 max-w-7xl mx-auto bg-[#f5f5f5]">
+      <div className="flex justify-between items-center mb-10">
+        <h2 className="text-2xl font-bold uppercase tracking-tight text-black border-l-4 border-[#fbb03b] pl-4">
+          Explore Our Products
+        </h2>
+        <div className="flex gap-2">
+            <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-100"><Eye size={16}/></button>
+            <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-100"><Heart size={16}/></button>
+        </div>
+      </div>
 
-        {products.length === 0 ? (
-          <div className="text-center py-5 border rounded bg-white">
-            <p className="text-muted">No active products found in the database.</p>
-          </div>
-        ) : (
-          <Row>
-            {products.map((product) => (
-              <Col key={product.id} xs={12} sm={6} md={4} lg={3} className="mb-4">
-                <Card className="position-relative h-100 shadow-sm border-0">
-                  
-                  {/* NEW Badge */}
-                  {product.is_new && (
-                    <span
-                      className="badge bg-success position-absolute"
-                      style={{ top: "15px", left: "15px", zIndex: 10 }}
-                    >
-                      NEW
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <div key={product.id} className="bg-white border border-gray-200 group relative flex flex-col p-4 transition-all hover:shadow-md">
+            
+            {/* NEW Badge (Optional logic) */}
+            {product.is_featured && (
+                <div className="absolute top-6 left-6 z-10">
+                    <span className="bg-[#4dbb5e] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                        NEW
                     </span>
-                  )}
+                </div>
+            )}
 
-                  {/* Action Icons */}
-                  <div
-                    className="position-absolute d-flex flex-column gap-2"
-                    style={{ top: "15px", right: "15px", zIndex: 10 }}
-                  >
-                    <Button variant="white" className="shadow-sm rounded-circle p-2 bg-white">
-                      <Heart size={16} className="text-danger" />
-                    </Button>
-                    <Button variant="white" className="shadow-sm rounded-circle p-2 bg-white">
-                      <Eye size={16} />
-                    </Button>
-                  </div>
+            {/* Top Right Action Icons */}
+            <div className="absolute top-6 right-6 flex flex-col gap-2 z-10">
+              <button className="text-gray-400 hover:text-black transition p-1 bg-white rounded-full border border-gray-100 shadow-sm">
+                <Heart size={18} />
+              </button>
+              <button className="text-gray-400 hover:text-black transition p-1 bg-white rounded-full border border-gray-100 shadow-sm">
+                <Eye size={18} />
+              </button>
+            </div>
 
-                  {/* Product Image - Field names adjusted for typical Django Serializer names */}
-                  <Card.Img
-                    variant="top"
-                    src={product.product_image || product.main_image} 
-                    style={{
-                      height: "220px",
-                      objectFit: "contain",
-                      padding: "20px",
-                      backgroundColor: "#f8f9fa"
-                    }}
-                  />
+            {/* Product Image Area */}
+            <div className="aspect-[4/5] flex items-center justify-center bg-[#f8f8f8] mb-4 overflow-hidden relative">
+              <img
+                src={product.main_image}
+                alt={product.name}
+                className="w-4/5 h-4/5 object-contain transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
 
-                  <Card.Body className="d-flex flex-column">
-                    <Card.Title className="text-dark truncate" style={{ fontSize: "15px" }}>
-                      {product.name}
-                    </Card.Title>
+            {/* Product Details */}
+            <div className="flex flex-col flex-grow">
+              <h3 className="font-bold text-gray-900 text-sm mb-2 line-clamp-1">
+                {product.name}
+              </h3>
 
-                    <div className="mt-auto">
-                      <div className="d-flex align-items-center gap-2 mb-2">
-                        {/* Displaying prices based on your screenshot's field names */}
-                        <span className="text-success fw-bold fs-5">
-                          ₦{Number(product.discounted_price || product.final_price || product.price).toLocaleString()}
-                        </span>
-
-                        {product.discounted_price && product.price > product.discounted_price && (
-                          <span className="text-muted text-decoration-line-through small">
+              <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2">
+                    {/* DESIGN: Green price as per your image */}
+                    <span className="text-[#4dbb5e] font-bold text-base">
+                        ₦{Number(product.final_price).toLocaleString()}
+                    </span>
+                    {product.discounted_price && (
+                        <span className="text-gray-400 text-xs line-through">
                             ₦{Number(product.price).toLocaleString()}
-                          </span>
-                        )}
-                      </div>
+                        </span>
+                    )}
+                </div>
 
-                      <div className="mb-3 text-warning small">
-                        ⭐⭐⭐⭐⭐
-                        <span className="text-muted ms-1">({product.review_count || 0})</span>
-                      </div>
+                {/* DESIGN: Orange Button with White Text */}
+                <button className="bg-[#fbb03b] text-white text-[10px] font-bold py-1.5 px-3 rounded flex items-center gap-1.5 hover:bg-orange-500 transition shadow-sm active:scale-95">
+                  <ShoppingCart size={12} />
+                  Add to cart
+                </button>
+              </div>
 
-                      <Button
-                        variant="warning"
-                        className="w-100 text-dark fw-bold rounded-3 py-2"
-                      >
-                        🛒 Add to cart
-                      </Button>
-                    </div>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        )}
-      </Container>
+              {/* DESIGN: Star Rating Section */}
+              <div className="flex items-center gap-1 mt-auto">
+                <div className="flex text-[#fbb03b]">
+                  <Star size={12} fill="currentColor" />
+                  <Star size={12} fill="currentColor" />
+                  <Star size={12} fill="currentColor" />
+                  <Star size={12} fill="currentColor" />
+                  <Star size={12} fill="currentColor" className="text-gray-300" />
+                </div>
+                <span className="text-gray-400 text-[10px] font-medium">(75)</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
