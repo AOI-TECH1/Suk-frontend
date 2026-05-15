@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+
+a{
+    color: white;
+    text-decoration: none !important;
+}
+
+
+a:hover{
+    color: #FBA834;
+}
