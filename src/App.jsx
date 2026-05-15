@@ -1,11 +1,11 @@
-import React from 'react';
-import {BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react'; // Added useEffect
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 // 1. CONTEXT & LAYOUTS
 import { AuthProvider } from './context/AuthContext';
 import MainLayout from './layouts/MainLayout';
 
-// 2. ROUTE GUARDS (Security)
+// 2. ROUTE GUARDS
 import ProtectedRoute from './routes/ProtectedRoute';
 import PublicRoute from './routes/PublicRoute';
 
@@ -13,10 +13,19 @@ import PublicRoute from './routes/PublicRoute';
 import Home from './pages/public/Home';
 import Shop from './pages/public/Shop';
 import ProductDetail from './pages/public/ProductDetail';
+import Terms from './pages/public/Terms';
+import DeliveryInfo from './pages/public/DeliveryInfo';
+import Wishlist from './pages/public/WishList'; 
+import RefundPolicy from './pages/public/RefundPolicy';
+import FAQ from './pages/public/FAQ'; 
+import GoodsService from './pages/public/GoodServices';
+import PrivacyPolicy from './pages/public/PrivacyPolicy';
+import Cart from './pages/public/Cart'; // ONLY ONE IMPORT HERE
 
 // 4. AUTH PAGES
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import BuyerRegister from './pages/auth/BuyerRegister';
 
 // 5. BUYER PAGES
 import BuyerDashboard from './pages/buyer/Dashboard';
@@ -28,62 +37,74 @@ import SellerDashboard from './pages/seller/Dashboard';
 import SellerProducts from './pages/seller/Products';
 import AddProduct from './pages/seller/AddProduct';
 
-// 7. STAFF (Admin/Manager) PAGES
+// 7. STAFF PAGES
 import AdminDashboard from './pages/staff/AdminDashboard';
 import UserManagement from './pages/staff/UserMgmt';
 import AdManagement from './pages/staff/Ads';
-import BuyerRegister from './pages/auth/BuyerRegister';
+
+// --- HELPER COMPONENT: Forces page to jump to top when link is clicked ---
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-      <Routes>
-        
-        {/* --- PUBLIC AREA (Navbar & Footer visible) --- */}
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
+        <ScrollToTop /> {/* This fixes the "it doesn't move" feeling */}
+        <Routes>
           
-          {/* AUTH - Only show if user is NOT logged in */}
-          <Route element={<PublicRoute />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/buyerregister" element={<BuyerRegister />} />
-          </Route>
-        </Route>
-
-        {/* --- BUYER AREA (Must be logged in) --- */}
-        <Route element={<ProtectedRoute allowedRoles={['BUYER', 'SELLER', 'ADMIN', 'MANAGER']} />}>
+          {/* --- PUBLIC AREA --- */}
           <Route element={<MainLayout />}>
-             <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
-             <Route path="/buyer/orders" element={<BuyerOrders />} />
-             <Route path="/buyer/settings" element={<BuyerSettings />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<Cart />} /> 
+            
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/delivery-info" element={<DeliveryInfo />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/services" element={<GoodsService />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            
+            <Route element={<PublicRoute />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/buyerregister" element={<BuyerRegister />} />
+            </Route>
           </Route>
-        </Route>
 
-        {/* --- SELLER AREA (Must be a SELLER) --- */}
-        <Route element={<ProtectedRoute allowedRoles={['SELLER']} />}>
-          {/* Sellers usually have a different sidebar, so we might use a different layout later */}
-          <Route element={<MainLayout />}>
-            <Route path="/seller/dashboard" element={<SellerDashboard />} />
-            <Route path="/seller/products" element={<SellerProducts />} />
-            <Route path="/seller/add-product" element={<AddProduct />} />
+          {/* --- PROTECTED ROUTES --- */}
+          <Route element={<ProtectedRoute allowedRoles={['BUYER', 'SELLER', 'ADMIN', 'MANAGER']} />}>
+            <Route element={<MainLayout />}>
+               <Route path="/buyer/dashboard" element={<BuyerDashboard />} />
+               <Route path="/buyer/orders" element={<BuyerOrders />} />
+               <Route path="/buyer/settings" element={<BuyerSettings />} />
+            </Route>
           </Route>
-        </Route>
 
-        {/* --- STAFF AREA (Manager / Admin Only) --- */}
-        <Route element={<ProtectedRoute allowedRoles={['ADMIN', 'MANAGER']} />}>
-          <Route path="/staff/dashboard" element={<AdminDashboard />} />
-          <Route path="/staff/users" element={<UserManagement />} />
-          <Route path="/staff/ads" element={<AdManagement />} />
-        </Route>
+          <Route element={<ProtectedRoute allowedRoles={['SELLER']} />}>
+            <Route element={<MainLayout />}>
+              <Route path="/seller/dashboard" element={<SellerDashboard />} />
+              <Route path="/seller/products" element={<SellerProducts />} />
+              <Route path="/seller/add-product" element={<AddProduct />} />
+            </Route>
+          </Route>
 
-        {/* --- 404 NOT FOUND --- */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+          <Route element={<ProtectedRoute allowedRoles={['ADMIN', 'MANAGER']} />}>
+            <Route path="/staff/dashboard" element={<AdminDashboard />} />
+            <Route path="/staff/users" element={<UserManagement />} />
+            <Route path="/staff/ads" element={<AdManagement />} />
+          </Route>
 
-      </Routes>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </BrowserRouter>
     </AuthProvider>
   );
