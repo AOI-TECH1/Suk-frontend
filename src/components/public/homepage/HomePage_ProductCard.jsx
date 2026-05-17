@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Heart, Eye, ShoppingCart, Star } from "lucide-react"; 
 import { getAllProducts } from "../../../api/productApi";
+import { useAuth } from "../../../context/AuthContext"; // IMPORT THIS
 import toast from "react-hot-toast";
 
 function ProductSection() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { addToCart } = useAuth(); // GRAB THE FUNCTION
 
   useEffect(() => {
     const fetchInfo = async () => {
@@ -16,7 +18,6 @@ function ProductSection() {
         setProducts(data);
       } catch (error) {
         console.error("SuK API Error:", error);
-        toast.error("Unable to load products.");
       } finally {
         setLoading(false);
       }
@@ -35,12 +36,12 @@ function ProductSection() {
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto bg-[#f5f5f5]">
       <div className="flex justify-between items-center mb-10">
-        <h2 className="text-2xl font-bold uppercase tracking-tight text-black border-l-4 border-[#fbb03b] pl-4">
+        <h2 className="text-xl font-bold uppercase tracking-tight text-black border-l-4 border-[#fbb03b] pl-4">
           Explore Our Products
         </h2>
         <div className="flex gap-2">
-            <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-100"><Eye size={16}/></button>
-            <button className="bg-white p-2 rounded-full shadow-sm hover:bg-gray-100"><Heart size={16}/></button>
+            <button className="bg-white p-1.5 rounded-full shadow-sm hover:bg-gray-100"><Eye size={14}/></button>
+            <button className="bg-white p-1.5 rounded-full shadow-sm hover:bg-gray-100"><Heart size={14}/></button>
         </div>
       </div>
 
@@ -48,10 +49,10 @@ function ProductSection() {
         {products.map((product) => (
           <div key={product.id} className="bg-white border border-gray-200 group relative flex flex-col p-4 transition-all hover:shadow-md">
             
-            {/* NEW Badge (Optional logic) */}
+            {/* NEW Badge */}
             {product.is_featured && (
                 <div className="absolute top-6 left-6 z-10">
-                    <span className="bg-[#4dbb5e] text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">
+                    <span className="bg-[#4dbb5e] text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">
                         NEW
                     </span>
                 </div>
@@ -60,10 +61,10 @@ function ProductSection() {
             {/* Top Right Action Icons */}
             <div className="absolute top-6 right-6 flex flex-col gap-2 z-10">
               <button className="text-gray-400 hover:text-black transition p-1 bg-white rounded-full border border-gray-100 shadow-sm">
-                <Heart size={18} />
+                <Heart size={16} />
               </button>
               <button className="text-gray-400 hover:text-black transition p-1 bg-white rounded-full border border-gray-100 shadow-sm">
-                <Eye size={18} />
+                <Eye size={16} />
               </button>
             </div>
 
@@ -78,26 +79,30 @@ function ProductSection() {
 
             {/* Product Details */}
             <div className="flex flex-col flex-grow">
-              <h3 className="font-bold text-gray-900 text-sm mb-2 line-clamp-1">
+              {/* SHRUNK TEXT: text-xs */}
+              <h3 className="font-bold text-gray-900 text-xs mb-2 line-clamp-1">
                 {product.name}
               </h3>
 
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
-                    {/* DESIGN: Green price as per your image */}
-                    <span className="text-[#4dbb5e] font-bold text-base">
+                    {/* SHRUNK TEXT: text-sm */}
+                    <span className="text-[#4dbb5e] font-bold text-sm">
                         ₦{Number(product.final_price).toLocaleString()}
                     </span>
                     {product.discounted_price && (
-                        <span className="text-gray-400 text-xs line-through">
+                        <span className="text-gray-400 text-[9px] line-through">
                             ₦{Number(product.price).toLocaleString()}
                         </span>
                     )}
                 </div>
 
-                {/* DESIGN: Orange Button with White Text */}
-                <button className="bg-[#fbb03b] text-white text-[10px] font-bold py-1.5 px-3 rounded flex items-center gap-1.5 hover:bg-orange-500 transition shadow-sm active:scale-95">
-                  <ShoppingCart size={12} />
+                {/* SHRUNK BUTTON: py-1 px-2 and text-[9px]. Added onClick logic */}
+                <button 
+                  onClick={() => addToCart(product)}
+                  className="bg-[#fbb03b] text-white text-[9px] font-bold py-1 px-2 rounded flex items-center gap-1 hover:bg-orange-500 transition shadow-sm active:scale-95"
+                >
+                  <ShoppingCart size={10} />
                   Add to cart
                 </button>
               </div>
@@ -105,13 +110,13 @@ function ProductSection() {
               {/* DESIGN: Star Rating Section */}
               <div className="flex items-center gap-1 mt-auto">
                 <div className="flex text-[#fbb03b]">
-                  <Star size={12} fill="currentColor" />
-                  <Star size={12} fill="currentColor" />
-                  <Star size={12} fill="currentColor" />
-                  <Star size={12} fill="currentColor" />
-                  <Star size={12} fill="currentColor" className="text-gray-300" />
+                  <Star size={10} fill="currentColor" />
+                  <Star size={10} fill="currentColor" />
+                  <Star size={10} fill="currentColor" />
+                  <Star size={10} fill="currentColor" />
+                  <Star size={10} fill="currentColor" className="text-gray-300" />
                 </div>
-                <span className="text-gray-400 text-[10px] font-medium">(75)</span>
+                <span className="text-gray-400 text-[9px] font-medium">(75)</span>
               </div>
             </div>
           </div>
