@@ -6,13 +6,16 @@ import api from './axios';
 
 // 1. Normal Email/Password Login
 export const loginUser = (credentials) => {
-    // credentials = { email, password }
-    return api.post('/auth/token/', credentials);
+    // We map 'email' to 'email' (or 'username' depending on your backend config)
+    // Based on your successful Postman test, your backend expects 'email'
+    return api.post('/auth/token/', {
+        email: credentials.email,
+        password: credentials.password
+    });
 };
 
 // 2. Register New User (Buyer or Seller)
 export const registerUser = (userData) => {
-    // userData = { email, password, confirm_password, role, phone_number }
     return api.post('/auth/register/', userData);
 };
 
@@ -21,29 +24,27 @@ export const googleLogin = (accessToken) => {
     return api.post('/auth/google/', { access_token: accessToken });
 };
 
-// 4. Get Current Logged-in User Data
-// This is used by AuthContext to verify the user on page refresh
-export const getProfile = () => {
-    return api.get('/auth/profile/');
+// 4. Get Current User (Important for the Navbar)
+export const getUserData = () => {
+    return api.get('/auth/user/'); 
 };
 
-// 5. Update Profile (Name, Phone, etc.)
+// 5. Update Profile
 export const updateProfile = (profileData) => {
-    return api.patch('/auth/profile/update/', profileData);
+    return api.patch('/auth/user/', profileData);
 };
 
-// 6. Forgot Password (Step 1: Request Reset Link)
+// 6. Forgot Password
 export const forgotPassword = (email) => {
-    return api.post('/auth/password/reset/', { email });
+    return api.post('/password/reset/', { email });
 };
 
-// 7. Reset Password (Step 2: Submit new password with token)
+// 7. Reset Password Confirm
 export const resetPasswordConfirm = (data) => {
-    // data = { uid, token, new_password }
-    return api.post('/auth/password/reset/confirm/', data);
+    return api.post('/password/reset/confirm/', data);
 };
 
-// 8. Refresh Token (To keep the session alive)
+// 8. Refresh Token
 export const refreshToken = (refresh) => {
     return api.post('/auth/token/refresh/', { refresh });
 };
