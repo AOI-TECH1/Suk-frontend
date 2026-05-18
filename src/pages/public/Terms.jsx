@@ -1,100 +1,135 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FileText, ChevronRight, ShieldCheck, Scale, AlertOctagon, HelpCircle } from 'lucide-react';
 
 const Terms = () => {
   return (
-    <div className="bg-gray-50 min-h-screen py-16">
-      <div className="max-w-4xl mx-auto px-6">
-        
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-black text-black mb-4 tracking-tight">
-            Terms of <span className="text-orange-500">Use</span>
-          </h1>
-          <p className="text-gray-500 font-medium">Last updated: May 15, 2026</p>
+    <div className="bg-[#fcfcfc] min-h-screen pt-32 pb-20 font-sans">
+      
+      {/* --- 1. HERO IMAGE BANNER --- */}
+      <div className="relative w-full h-48 md:h-64 bg-zinc-900 overflow-hidden flex items-center z-10">
+        <img 
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop" 
+          alt="Legal Banner" 
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-20 w-full text-white font-sans">
+            {/* Breadcrumb */}
+            <nav className="flex items-center text-[10px] text-gray-300 font-black mb-3 uppercase tracking-[0.2em]">
+                <Link to="/" className="hover:text-[#fbb03b] transition-colors">Home</Link>
+                <ChevronRight size={10} className="mx-2 text-gray-500" />
+                <span className="text-[#fbb03b]">Legal</span>
+            </nav>
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+                Terms <span className="text-[#fbb03b]">Of Use</span>
+            </h1>
         </div>
+      </div>
 
-        {/* Content Section */}
-        <div className="bg-white rounded-[40px] p-8 md:p-12 shadow-sm border border-gray-100 text-gray-700 leading-relaxed space-y-10">
+      {/* --- 2. MAIN CONTENT CARD --- */}
+      <div className="flex items-center justify-center px-4 -mt-16 relative z-30">
+        <div className="max-w-4xl w-full bg-white p-8 md:p-16 rounded-[40px] shadow-2xl border border-gray-100">
           
-          <section>
-            <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-3">
-              <span className="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">01</span>
-              Acceptance of Terms
-            </h2>
-            <p>
-              Welcome to SuK Marketplace. By accessing or using our platform, you agree to comply with and be bound by these Terms of Use. If you do not agree to these terms, please do not use the platform. We reserve the right to change these terms at any time without notice.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-3">
-              <span className="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">02</span>
-              User Accounts & Security
-            </h2>
-            <p className="mb-4">
-              To use certain features of SuK, you must register for an account (Buyer or Seller). You are responsible for:
-            </p>
-            <ul className="list-disc ml-6 space-y-2 text-gray-600">
-              <li>Maintaining the confidentiality of your login credentials.</li>
-              <li>All activities that occur under your account.</li>
-              <li>Ensuring your contact information is accurate and up-to-date.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-3">
-              <span className="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">03</span>
-              Seller Obligations
-            </h2>
-            <p className="mb-4">
-              Sellers on SuK Marketplace agree to:
-            </p>
-            <div className="bg-orange-50 p-6 rounded-2xl border border-orange-100">
-               <ul className="space-y-3 font-medium text-black">
-                 <li>🚫 Not list illegal, counterfeit, or stolen items.</li>
-                 <li>📦 Honor the delivery times promised on product pages.</li>
-                 <li>📸 Use real images of the products (No misleading photos).</li>
-                 <li>💰 Pay the applicable platform commission fees on successful sales.</li>
-               </ul>
+          {/* Header Intro */}
+          <div className="mb-16 border-b border-gray-50 pb-10 text-center md:text-left">
+            <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-orange-50 rounded-xl flex items-center justify-center text-[#fbb03b]">
+                    <Scale size={22} />
+                </div>
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Effective: May 2026</p>
             </div>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-3">
-              <span className="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">04</span>
-              Payments & Transactions
-            </h2>
-            <p>
-              SuK Marketplace uses <span className="font-bold text-blue-600">Paystack</span> as our secure payment gateway. By making a purchase, you agree to their terms as well. We do not store your credit card information. Payments are released to sellers only after confirmation of delivery in accordance with our payout schedule.
+            <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-6">User Agreement.</h2>
+            <p className="text-gray-500 font-medium leading-relaxed text-sm md:text-base">
+                Welcome to SuK. By utilizing our marketplace, you enter into a legally binding contract 
+                with SuK Marketplace NG. Please read these terms carefully to understand your rights and 
+                obligations as a Buyer or a Merchant.
             </p>
-          </section>
+          </div>
 
-          <section>
-            <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-3">
-              <span className="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">05</span>
-              Prohibited Conduct
-            </h2>
-            <p>
-              Users are strictly prohibited from engaging in fraudulent activities, harassing other users, or attempting to bypass the SuK payment system to conduct private transactions. Any violation will result in permanent account suspension.
-            </p>
-          </section>
+          {/* Content Sections */}
+          <div className="space-y-16">
+            
+            {/* Section 01 */}
+            <section className="relative pl-12 sm:pl-16">
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">01</span>
+                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4">Acceptance of Terms</h3>
+                <p className="text-xs text-gray-500 font-medium leading-loose">
+                    By accessing SuK, you agree to be bound by these Terms of Use. We reserve the 
+                    right to modify these terms as the marketplace evolves. Continued use of the 
+                    platform constitutes your acceptance of any changes.
+                </p>
+            </section>
 
-          <section>
-            <h2 className="text-2xl font-bold text-black mb-4 flex items-center gap-3">
-              <span className="bg-orange-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">06</span>
-              Limitation of Liability
-            </h2>
-            <p className="italic bg-gray-50 p-6 rounded-2xl border border-gray-200">
-              "SuK Marketplace acts as a bridge between buyers and sellers. We are not responsible for the quality, safety, or legality of the items advertised, nor the truth or accuracy of the listings."
-            </p>
-          </section>
+            {/* Section 02 */}
+            <section className="relative pl-12 sm:pl-16">
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">02</span>
+                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4">Merchant Integrity</h3>
+                <div className="bg-orange-50 p-6 rounded-3xl border border-orange-100 space-y-4">
+                    <p className="text-[11px] text-orange-900 font-bold uppercase tracking-widest">Sellers must adhere to:</p>
+                    <ul className="space-y-3">
+                        {[
+                            "Verification of business identity (KYC)",
+                            "Listing of authentic, non-counterfeit goods",
+                            "Strict adherence to shipping timelines",
+                            "Accurate visual representation of products"
+                        ].map((item, index) => (
+                            <li key={index} className="flex items-center gap-3 text-xs font-bold text-orange-800 italic">
+                                <div className="w-1.5 h-1.5 bg-[#fbb03b] rounded-full"></div> {item}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
 
-        </div>
+            {/* Section 03 */}
+            <section className="relative pl-12 sm:pl-16">
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">03</span>
+                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4">Payments & Escrow</h3>
+                <p className="text-xs text-gray-500 font-medium leading-loose">
+                    SuK utilizes **Paystack** for secure processing. To protect both parties, 
+                    we hold funds in a secure escrow vault. Funds are only released to merchants 
+                    once the buyer confirms quality receipt or after the 7-day return window expires.
+                </p>
+            </section>
 
-        {/* Support Call-to-action */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-500">Questions about our Terms?</p>
-          <a href="/contact" className="text-orange-500 font-bold hover:underline">Contact SuK Support Team</a>
+            {/* Section 04 */}
+            <section className="relative pl-12 sm:pl-16">
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">04</span>
+                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4 flex items-center gap-2">
+                    Prohibited Conduct <AlertOctagon size={16} className="text-red-500" />
+                </h3>
+                <p className="text-xs text-gray-500 font-medium leading-loose">
+                    Fraudulent listings, account sharing, or attempting to bypass the SuK payment 
+                    gateway to conduct off-platform transactions will result in an immediate 
+                    and permanent ban from the network.
+                </p>
+            </section>
+
+          </div>
+
+          {/* Footer Disclaimer */}
+          <div className="mt-20 p-8 bg-zinc-900 rounded-[32px] text-white relative overflow-hidden">
+             <FileText size={80} className="absolute -right-4 -bottom-4 opacity-5 rotate-12" />
+             <div className="relative z-10">
+                <h4 className="text-[#fbb03b] font-black uppercase italic text-sm mb-4">Limitation of Liability</h4>
+                <p className="text-xs text-gray-400 font-medium leading-relaxed italic">
+                    "SuK Marketplace is a facilitator. While we verify all merchants, we are not 
+                    liable for the physical performance of products. Users are encouraged to 
+                    review merchant ratings before purchase."
+                </p>
+             </div>
+          </div>
+
+          {/* Footer Note - Updated to general support email */}
+<div className="mt-20 pt-10 border-t border-gray-50 flex flex-col md:flex-row justify-between items-center gap-6">
+  <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest text-center md:text-left">
+    Questions? Reach out to <span className="text-black">support@suk.com.ng</span>
+  </p>
+  <Link to="/contact" className="bg-black text-white px-8 py-3 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-[#fbb03b] hover:text-black transition-all shadow-xl active:scale-95">
+      Visit Help Center
+  </Link>
+</div>
+
         </div>
       </div>
     </div>

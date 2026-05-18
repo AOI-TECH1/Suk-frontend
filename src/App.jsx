@@ -31,6 +31,7 @@ import PrivacyPolicy from './pages/public/PrivacyPolicy';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import SellerOnboarding from './pages/auth/SellerOnboarding';
+import ForgotPassword from './pages/auth/ForgotPassword';
 
 // 6. BUYER PAGES
 import BuyerDashboard from './pages/buyer/Dashboard';
@@ -91,6 +92,7 @@ function App() {
             <Route element={<PublicRoute />}>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
             </Route>
 
             {/* CHECKOUT (Requires Login) */}
