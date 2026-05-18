@@ -86,7 +86,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#fcfcfc] min-h-screen pt-32 pb-20 font-sans">
+    <div className="bg-[#fcfcfc] min-h-screen h-36 pb-20 font-sans">
       
       {/* 1. HEADER BANNER */}
       <div className="relative w-full h-48 md:h-64 bg-zinc-900 overflow-hidden flex items-center z-10">
