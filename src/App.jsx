@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { AuthProvider } from './context/AuthContext';
 import MainLayout from './layouts/MainLayout';
 
-// 2. ROUTE GUARDS
+// 2. ROUTE GUARDS/
 import ProtectedRoute from './routes/ProtectedRoute';
 import PublicRoute from './routes/PublicRoute';
 
@@ -16,6 +16,8 @@ import ProductDetail from './pages/public/ProductDetail';
 import Cart from './pages/public/Cart';
 import Checkout from './pages/public/Checkout';
 import Wishlist from './pages/public/WishList'; 
+import CategoryPage from './pages/public/CategoryPage';
+
 
 // 4. STATIC PUBLIC PAGES (The ones your student just added)
 import Terms from './pages/public/Terms';
@@ -44,6 +46,8 @@ import AddProduct from './pages/seller/AddProduct';
 import AdminDashboard from './pages/staff/AdminDashboard';
 import UserManagement from './pages/staff/UserMgmt';
 import AdManagement from './pages/staff/Ads';
+import About from './pages/public/About';
+import Contact from './pages/public/Contact';
 
 // --- HELPER COMPONENT: Forces page to jump to top when link is clicked ---
 function ScrollToTop() {
@@ -70,6 +74,8 @@ function App() {
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/category/:slug" element={<CategoryPage />} />
+
             
             {/* Static Content Pages */}
             <Route path="/terms" element={<Terms />} />
@@ -78,6 +84,8 @@ function App() {
             <Route path="/services" element={<GoodsService />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/* AUTH ROUTES (Redirects logged-in users away from Login/Register) */}
             <Route element={<PublicRoute />}>
