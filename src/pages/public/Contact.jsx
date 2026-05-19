@@ -84,9 +84,9 @@ const Contact = () => {
                <div className="absolute top-0 right-0 w-24 h-24 bg-[#fbb03b]/20 rounded-full -mr-10 -mt-10 blur-2xl"></div>
                <h4 className="font-black uppercase text-xs tracking-[0.2em] mb-6">Follow our growth</h4>
                <div className="flex gap-6">
-                  <a href="#" className="hover:text-[#fbb03b] transition-all transform hover:scale-125"><FaFacebookF size={20}/></a>
-                  <a href="#" className="hover:text-[#fbb03b] transition-all transform hover:scale-125"><FaTwitter size={20}/></a>
-                  <a href="#" className="hover:text-[#fbb03b] transition-all transform hover:scale-125"><FaInstagram size={20}/></a>
+                  <a href="https://www.facebook.com/profile.php?id=61590081508588" target="_blank" rel="noopener noreferrer" className="hover:text-[#fbb03b] transition-all transform hover:scale-125"><FaFacebookF size={20}/></a>
+                  <a href="https://x.com/SukPlace21226" target="_blank" rel="noopener noreferrer" className="hover:text-[#fbb03b] transition-all transform hover:scale-125"><FaTwitter size={20}/></a>
+                  <a href="https://www.instagram.com/suukmarketplace/" target="_blank" rel="noopener noreferrer" className="hover:text-[#fbb03b] transition-all transform hover:scale-125"><FaInstagram size={20}/></a>
                </div>
             </div>
           </div>

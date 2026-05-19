@@ -36,7 +36,7 @@ const Navbar = () => {
         
         {/* 1. LOGO */}
         <Link to="/" className="shrink-0">
-          <img src={suk_logo} alt="SuK" className='h-8 w-auto object-contain transition-transform hover:scale-105' />
+          <img src={suk_logo} alt="SuK" className='h-15 w-auto object-contain transition-transform hover:scale-105' />
         </Link>
 
         {/* 2. CENTER NAVIGATION */}
