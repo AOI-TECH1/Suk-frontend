@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // Using Lucide for cleaner icons
+import { Link } from "react-router-dom"; // 1. IMPORT LINK
+import { ChevronLeft, ChevronRight } from "lucide-react"; 
 import slider from "../../../assets/images/Furniture.jpg";
 
 const slides = [
@@ -26,7 +27,6 @@ const slides = [
 export default function HeroSlider() {
   const [current, setCurrent] = useState(0);
 
-  // Auto slide logic
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -52,7 +52,6 @@ export default function HeroSlider() {
             className="w-full h-full object-cover"
           />
 
-          {/* GLASSMORPHISM OVERLAY - Updated for premium feel */}
           <div className="absolute inset-0 bg-black/10 flex items-center">
             <div className="max-w-7xl mx-auto px-10 md:px-20 w-full">
               <div className="bg-white/20 backdrop-blur-md p-10 md:p-14 rounded-[40px] max-w-lg text-black shadow-2xl border border-white/30 animate-in fade-in zoom-in duration-700">
@@ -64,12 +63,21 @@ export default function HeroSlider() {
                 </p>
 
                 <div className="flex gap-4">
-                  <button className="bg-[#fbb03b] text-black font-black px-8 py-3.5 rounded-xl hover:bg-orange-500 transition-all shadow-lg active:scale-95 uppercase text-xs tracking-widest">
+                  {/* 2. LINK 'BUY NOW' TO SHOP */}
+                  <Link 
+                    to="/shop" 
+                    className="bg-[#fbb03b] text-black font-black px-8 py-3.5 rounded-xl hover:bg-orange-500 transition-all shadow-lg active:scale-95 uppercase text-xs tracking-widest flex items-center justify-center"
+                  >
                     Buy Now
-                  </button>
-                  <button className="bg-white text-black font-bold px-8 py-3.5 rounded-xl border border-gray-200 hover:bg-gray-50 transition-all active:scale-95 uppercase text-xs tracking-widest">
+                  </Link>
+
+                  {/* 3. LINK 'SELL NOW' TO SETUP STORE */}
+                  <Link 
+                    to="/setup-store" 
+                    className="bg-white text-black font-bold px-8 py-3.5 rounded-xl border border-gray-200 hover:bg-gray-50 transition-all active:scale-95 uppercase text-xs tracking-widest flex items-center justify-center"
+                  >
                     Sell Now
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -77,22 +85,16 @@ export default function HeroSlider() {
         </div>
       ))}
 
-      {/* NAVIGATION ARROWS */}
-      <button
-        onClick={prevSlide}
-        className="absolute top-1/2 left-6 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all border border-white/10"
-      >
+      {/* ARROWS */}
+      <button onClick={prevSlide} className="absolute top-1/2 left-6 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all border border-white/10">
         <ChevronLeft size={24} />
       </button>
 
-      <button
-        onClick={nextSlide}
-        className="absolute top-1/2 right-6 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all border border-white/10"
-      >
+      <button onClick={nextSlide} className="absolute top-1/2 right-6 -translate-y-1/2 z-30 bg-black/20 hover:bg-black/60 text-white p-3 rounded-full backdrop-blur-sm transition-all border border-white/10">
         <ChevronRight size={24} />
       </button>
 
-      {/* PILL-STYLE PAGINATION DOTS (Corrected Logic) */}
+      {/* PAGINATION */}
       <div className="absolute bottom-8 w-full flex justify-center gap-3 z-30">
         {slides.map((_, index) => (
           <span
