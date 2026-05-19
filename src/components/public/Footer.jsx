@@ -43,10 +43,10 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <img src={suk_logo} alt="SuK" className="h-12 mb-6 object-contain" />
               <div className="flex gap-4">
-                <SocialLink icon={<FaFacebookF />} link="https://facebook.com" />
-                <SocialLink icon={<FaTwitter />} link="https://twitter.com" />
-                <SocialLink icon={<FaInstagram />} link="https://instagram.com" />
-                <SocialLink icon={<FaLinkedinIn />} link="https://linkedin.com" />
+                <SocialLink icon={<FaFacebookF />} link="https://www.facebook.com/profile.php?id=61590081508588" />
+                <SocialLink icon={<FaTwitter />} link="https://x.com/SukPlace21226" />
+                <SocialLink icon={<FaInstagram />} link="https://www.instagram.com/suukmarketplace/" />
+                <SocialLink icon={<FaLinkedinIn />} link="https://www.linkedin.com/company/118524116/" />
               </div>
             </div>
 
