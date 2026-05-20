@@ -1,50 +1,107 @@
 import api from './axios';
 
 /**
- * AUTHENTICATION ENDPOINTS
+ * =========================================================
+ * 1. AUTHENTICATION ENDPOINTS
+ * =========================================================
  */
 
-// 1. Normal Email/Password Login
+// Normal Email/Password Login
 export const loginUser = (credentials) => {
-    // We map 'email' to 'email' (or 'username' depending on your backend config)
-    // Based on your successful Postman test, your backend expects 'email'
     return api.post('/auth/token/', {
         email: credentials.email,
         password: credentials.password
     });
 };
 
-// 2. Register New User (Buyer or Seller)
+// Register New User (Defaults to role: BUYER)
 export const registerUser = (userData) => {
     return api.post('/auth/register/', userData);
 };
 
-// 3. Google Social Login
+// Google Social Login
 export const googleLogin = (accessToken) => {
     return api.post('/auth/google/', { access_token: accessToken });
 };
 
-// 4. Get Current User (Important for the Navbar)
+/**
+ * =========================================================
+ * 2. USER PROFILE ENDPOINTS
+ * =========================================================
+ */
+
+// Get Current User (Hydrates AuthContext/Navbar)
+// Returns: { id, email, role, has_shop, ... }
 export const getUserData = () => {
     return api.get('/auth/user/'); 
 };
 
-// 5. Update Profile
+// Update Basic User Profile (Name, Phone, etc.)
 export const updateProfile = (profileData) => {
     return api.patch('/auth/user/', profileData);
 };
 
-// 6. Forgot Password
+/**
+ * =========================================================
+ * 3. SELLER & STORE ENDPOINTS
+ * =========================================================
+ */
+
+// Seller Onboarding (The "Direct Entry" for registered buyers)
+export const onboardSeller = (storeData) => {
+    return api.post('/auth/seller/onboarding/', storeData);
+};
+
+// Get Store Details (Dashboard info, bank details, logo)
+export const getStoreDetails = () => {
+    return api.get('/auth/seller/store/');
+};
+
+// Update Store Details
+export const updateStoreDetails = (storeData) => {
+    return api.patch('/auth/seller/store/', storeData);
+};
+
+/**
+ * =========================================================
+ * 4. ADMIN MANAGEMENT (Restricted to Role: ADMIN)
+ * =========================================================
+ */
+
+// Create a new Staff or Manager account
+// Only works if the person making the call is an ADMIN
+export const createStaffAccount = (staffData) => {
+    // staffData = { email, password, full_name, role: 'MANAGER' }
+    return api.post('/auth/admin/manage-staff/', staffData);
+};
+
+// List all Staff and Managers
+export const listStaffAccounts = () => {
+    return api.get('/auth/admin/manage-staff/');
+};
+
+/**
+ * =========================================================
+ * 5. PASSWORD & TOKEN MANAGEMENT
+ * =========================================================
+ */
+
+// Forgot Password (Request Link)
 export const forgotPassword = (email) => {
-    return api.post('/password/reset/', { email });
+    return api.post('/auth/password/reset/', { email });
 };
 
-// 7. Reset Password Confirm
+// Reset Password Confirm (Submit New Password)
 export const resetPasswordConfirm = (data) => {
-    return api.post('/password/reset/confirm/', data);
+    return api.post('/auth/password/reset/confirm/', data);
 };
 
-// 8. Refresh Token
+// Refresh JWT Token
 export const refreshToken = (refresh) => {
     return api.post('/auth/token/refresh/', { refresh });
+};
+
+// Logout (Clears tokens)
+export const logoutUser = () => {
+    return api.post('/auth/logout/');
 };
