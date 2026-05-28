@@ -51,12 +51,12 @@ const StaffMgmt = () => {
       
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16">
         <div>
-           <h1 className="text-5xl font-[900] italic uppercase tracking-tighter text-zinc-900 leading-none mb-4">Personnel <span className="text-[#fbb03b]">Hierarchy</span></h1>
+           <h1 className="text-5xl font-[900]  uppercase tracking-tighter text-zinc-900 leading-none mb-4">Personnel <span className="text-[#fbb03b]">Hierarchy</span></h1>
            <p className="text-gray-400 text-xs font-bold uppercase tracking-[0.2em] max-w-md">Authorize internal access for system managers. Every action is cryptographically logged.</p>
         </div>
 
         <div className="w-full lg:w-[450px] bg-white border border-gray-100 p-8 rounded-[45px] shadow-2xl relative">
-            <h3 className="font-black text-sm uppercase italic mb-6 flex items-center gap-2"><Zap size={16} className="text-[#fbb03b]" fill="currentColor" /> Deploy Staff</h3>
+            <h3 className="font-black text-sm uppercase  mb-6 flex items-center gap-2"><Zap size={16} className="text-[#fbb03b]" fill="currentColor" /> Deploy Staff</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                     <input placeholder="Full Name" required value={formData.full_name} onChange={(e) => setFormData({...formData, full_name: e.target.value})} className="bg-gray-50 border-none rounded-xl py-3 px-4 text-xs font-bold outline-none focus:ring-2 focus:ring-[#fbb03b]" />
@@ -81,7 +81,7 @@ const StaffMgmt = () => {
                     <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-black text-lg ${member.role === 'ADMIN' ? 'bg-red-50 text-red-600' : 'bg-orange-50 text-orange-600'}`}>{member.full_name.charAt(0)}</div>
                     <span className="text-[8px] font-black px-2 py-1 rounded bg-zinc-950 text-white uppercase">{member.role}</span>
                 </div>
-                <h4 className="font-black text-zinc-900 uppercase italic leading-none">{member.full_name}</h4>
+                <h4 className="font-black text-zinc-900 uppercase  leading-none">{member.full_name}</h4>
                 <p className="text-[10px] font-bold text-gray-400 mt-2">{member.email}</p>
                 <button onClick={() => handleRevoke(member.id)} className="mt-8 pt-6 border-t border-gray-50 w-full flex items-center justify-between group-hover:text-red-600 transition-colors">
                     <span className="text-[9px] font-black uppercase">Revoke Access</span>

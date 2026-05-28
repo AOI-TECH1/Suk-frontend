@@ -45,7 +45,7 @@ const AddProduct = () => {
   }, []);
 
   // 3. Safety Check: If auth is loading, wait.
-  if (authLoading) return <div className="pt-40 text-center font-black italic uppercase">Verifying Access...</div>;
+  if (authLoading) return <div className="pt-40 text-center font-black  uppercase">Verifying Access...</div>;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -128,7 +128,7 @@ const AddProduct = () => {
                     <Package className="text-black" size={32} />
                 </div>
                 <div>
-                    <h2 className="text-4xl font-[900] italic uppercase tracking-tighter text-zinc-900">List New Product</h2>
+                    <h2 className="text-4xl font-[900]  uppercase tracking-tighter text-zinc-900">List New Product</h2>
                     <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.3em]">Merchant Inventory Portal</p>
                 </div>
             </div>

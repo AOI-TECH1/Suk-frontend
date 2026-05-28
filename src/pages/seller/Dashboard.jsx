@@ -37,7 +37,7 @@ const SellerDashboard = () => {
     <div className="min-h-screen flex items-center justify-center bg-[#fcfcfc]">
         <div className="flex flex-col items-center gap-4">
             <Loader2 className="animate-spin text-[#fbb03b]" size={40} />
-            <p className="font-black uppercase italic text-xs tracking-widest text-gray-400">Loading Command Center...</p>
+            <p className="font-black uppercase  text-xs tracking-widest text-gray-400">Loading Command Center...</p>
         </div>
     </div>
   );
@@ -58,7 +58,7 @@ const SellerDashboard = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <h1 className="text-4xl md:text-5xl font-[900] italic uppercase tracking-tighter text-zinc-900">
+            <h1 className="text-4xl md:text-5xl font-[900]  uppercase tracking-tighter text-zinc-900">
               Merchant <span className="text-[#fbb03b]">Center</span>
             </h1>
             <span className="bg-[#fbb03b] text-black text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
@@ -96,7 +96,7 @@ const SellerDashboard = () => {
                 <div className="relative z-10">
                     <div className="flex justify-between items-end mb-6">
                         <div>
-                            <h3 className="text-2xl font-black italic uppercase tracking-tighter">Inventory Usage</h3>
+                            <h3 className="text-2xl font-black  uppercase tracking-tighter">Inventory Usage</h3>
                             <p className="text-gray-500 text-[10px] font-black mt-1 uppercase tracking-widest">
                                 Tier Limit: {productLimit} Products
                             </p>
@@ -120,7 +120,7 @@ const SellerDashboard = () => {
 
             <div className="bg-white border border-gray-100 rounded-[45px] overflow-hidden shadow-sm">
                 <div className="p-8 border-b border-gray-50 flex justify-between items-center">
-                    <h3 className="font-black text-lg uppercase italic tracking-tighter text-zinc-900">Incoming Orders</h3>
+                    <h3 className="font-black text-lg uppercase  tracking-tighter text-zinc-900">Incoming Orders</h3>
                     {/* FIXED LINK */}
                     <Link to="/buyer/orders" className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-black">Manage All</Link>
                 </div>
@@ -152,7 +152,7 @@ const SellerDashboard = () => {
                                 </tr>
                             )) : (
                                 <tr>
-                                    <td colSpan="4" className="text-center py-10 text-gray-300 font-bold italic">No active orders yet.</td>
+                                    <td colSpan="4" className="text-center py-10 text-gray-300 font-bold ">No active orders yet.</td>
                                 </tr>
                             )}
                         </tbody>
@@ -163,7 +163,7 @@ const SellerDashboard = () => {
 
         <div className="space-y-8">
             <div className="bg-white border border-gray-100 p-10 rounded-[50px] shadow-sm">
-                <h3 className="font-black text-lg uppercase italic tracking-tighter mb-8 border-b border-gray-50 pb-4">Store Overview</h3>
+                <h3 className="font-black text-lg uppercase  tracking-tighter mb-8 border-b border-gray-50 pb-4">Store Overview</h3>
                 <div className="flex items-center gap-4 mb-10">
                     <div className="w-16 h-16 bg-zinc-50 rounded-2xl flex items-center justify-center border border-gray-100 overflow-hidden">
                          {store?.logo ? (

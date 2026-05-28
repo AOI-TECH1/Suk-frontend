@@ -27,7 +27,7 @@ const Cart = () => {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">My Bag</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 Shopping <span className="text-[#fbb03b]">Cart</span>
             </h1>
         </div>
@@ -42,7 +42,7 @@ const Cart = () => {
             <div className="bg-orange-50 w-24 h-24 rounded-full flex items-center justify-center mb-6">
               <ShoppingBag size={48} className="text-[#fbb03b]" />
             </div>
-            <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-4">Your bag is empty</h2>
+            <h2 className="text-3xl font-black uppercase  tracking-tight text-zinc-900 mb-4">Your bag is empty</h2>
             <p className="text-gray-400 font-medium mb-10 max-w-sm">
               Looks like you haven't picked anything yet. Start exploring our verified SuK inventory!
             </p>
@@ -71,7 +71,7 @@ const Cart = () => {
                   {/* Details */}
                   <div className="flex-grow text-center sm:text-left">
                     <p className="text-[10px] text-[#fbb03b] font-black uppercase tracking-widest mb-1">{item.category?.name || "Premium Good"}</p>
-                    <h3 className="font-black text-xl text-zinc-900 mb-2 leading-tight uppercase italic">{item.name}</h3>
+                    <h3 className="font-black text-xl text-zinc-900 mb-2 leading-tight uppercase ">{item.name}</h3>
                     <p className="text-[#4dbb5e] font-black text-xl">₦{Number(item.price).toLocaleString()}</p>
                     
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6 mt-6">
@@ -108,7 +108,7 @@ const Cart = () => {
             {/* Right: Summary Box */}
             <div className="lg:col-span-1">
               <div className="bg-zinc-900 text-white p-10 rounded-[40px] shadow-2xl sticky top-32 border border-white/5">
-                <h3 className="text-xl font-black mb-8 uppercase italic tracking-widest border-b border-white/10 pb-4 text-[#fbb03b]">Order Summary</h3>
+                <h3 className="text-xl font-black mb-8 uppercase  tracking-widest border-b border-white/10 pb-4 text-[#fbb03b]">Order Summary</h3>
                 
                 <div className="space-y-5 mb-10">
                   <div className="flex justify-between items-center">
@@ -121,7 +121,7 @@ const Cart = () => {
                   </div>
                   <div className="pt-6 border-t border-white/10 flex justify-between items-center">
                     <span className="text-xs font-black uppercase tracking-widest text-[#fbb03b]">Total Amount</span>
-                    <span className="text-3xl font-[900] italic">₦{total.toLocaleString()}</span>
+                    <span className="text-3xl font-[900] ">₦{total.toLocaleString()}</span>
                   </div>
                 </div>
 

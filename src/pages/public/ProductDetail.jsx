@@ -27,7 +27,7 @@ const ProductDetail = () => {
     fetchProduct();
   }, [id]);
 
-  if (!product) return <div className="h-screen flex items-center justify-center animate-pulse text-gray-400 font-black uppercase italic tracking-widest">Loading SuK Item...</div>;
+  if (!product) return <div className="h-screen flex items-center justify-center animate-pulse text-gray-400 font-black uppercase  tracking-widest">Loading SuK Item...</div>;
 
   const handleBuyNow = () => {
     addToCart({ ...product, quantity });

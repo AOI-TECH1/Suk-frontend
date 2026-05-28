@@ -33,7 +33,7 @@ const InventoryMgmt = () => {
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6 font-sans">
       <div className="flex justify-between items-end mb-12">
         <div>
-            <h1 className="text-4xl font-[900] italic uppercase tracking-tighter text-zinc-900">Marketplace <span className="text-[#fbb03b]">Oversight</span></h1>
+            <h1 className="text-4xl font-[900]  uppercase tracking-tighter text-zinc-900">Marketplace <span className="text-[#fbb03b]">Oversight</span></h1>
             <div className="flex gap-4 mt-6">
                 <button onClick={() => setView('PRODUCTS')} className={`text-[10px] font-black uppercase tracking-widest pb-2 border-b-2 transition-all ${view === 'PRODUCTS' ? 'border-[#fbb03b] text-black' : 'border-transparent text-gray-400'}`}>Product Inventory</button>
                 <button onClick={() => setView('MERCHANTS')} className={`text-[10px] font-black uppercase tracking-widest pb-2 border-b-2 transition-all ${view === 'MERCHANTS' ? 'border-[#fbb03b] text-black' : 'border-transparent text-gray-400'}`}>Merchant Terminals</button>

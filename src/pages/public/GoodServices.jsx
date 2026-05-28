@@ -52,7 +52,7 @@ function GoodsService() {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">Goods & Services</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 Our <span className="text-[#fbb03b]">Inventory</span>
             </h1>
         </div>
@@ -65,7 +65,7 @@ function GoodsService() {
         <div className="bg-white p-8 md:p-12 rounded-[40px] shadow-2xl border border-gray-100 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                 <div>
-                    <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-4">Quality Guaranteed</h2>
+                    <h2 className="text-3xl font-black uppercase  tracking-tight text-zinc-900 mb-4">Quality Guaranteed</h2>
                     <p className="text-gray-500 font-medium leading-relaxed">
                         Explore our curated selection of premium goods. From the latest electronics to 
                         exclusive fashion, every item on SuK is verified for quality and authenticity.

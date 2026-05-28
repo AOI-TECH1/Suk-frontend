@@ -25,7 +25,7 @@ const About = () => {
                 <ChevronRight size={12} className="text-[#fbb03b]" />
                 <span className="text-white">About SuK</span>
             </nav>
-            <h1 className="text-4xl md:text-6xl font-[900] uppercase italic tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-6xl font-[900] uppercase  tracking-tighter leading-none">
                 Home <span className="text-[#fbb03b]">Within.</span>
             </h1>
             <p className="mt-4 text-gray-300 font-medium max-w-md text-sm md:text-base border-l-2 border-[#fbb03b] pl-4">
@@ -48,7 +48,7 @@ const About = () => {
                <div className="w-10 h-1 bg-[#fbb03b]"></div>
                <span className="text-[10px] font-black uppercase tracking-widest text-[#fbb03b]">The Beginning</span>
             </div>
-            <h3 className="text-4xl font-black text-zinc-900 uppercase italic tracking-tight">Our Story</h3>
+            <h3 className="text-4xl font-black text-zinc-900 uppercase  tracking-tight">Our Story</h3>
             <p className="text-gray-500 leading-relaxed font-medium text-lg">
                 SuK is a dynamic e-commerce platform designed to offer a seamless shopping experience to customers while providing robust management tools for merchants.
             </p>
@@ -66,7 +66,7 @@ const About = () => {
             <div className="w-12 h-12 bg-[#fbb03b] rounded-2xl flex items-center justify-center text-black mb-4">
                <Target size={24} />
             </div>
-            <h3 className="text-4xl font-black text-zinc-900 uppercase italic tracking-tight">Our Vision</h3>
+            <h3 className="text-4xl font-black text-zinc-900 uppercase  tracking-tight">Our Vision</h3>
             <p className="text-gray-700 leading-relaxed font-bold text-xl">
               To revolutionize the online shopping experience in Nigeria and beyond.
             </p>
@@ -90,7 +90,7 @@ const About = () => {
           </div>
           
           <div className="space-y-8">
-            <h3 className="text-4xl font-black text-zinc-900 uppercase italic tracking-tight">Our Values</h3>
+            <h3 className="text-4xl font-black text-zinc-900 uppercase  tracking-tight">Our Values</h3>
             <div className="space-y-6">
                <ValueItem icon={<ShieldCheck className="text-green-500"/>} title="Trust & Security" desc="We build foundations on verified transactions and merchant integrity." />
                <ValueItem icon={<Target className="text-blue-500"/>} title="Innovation" desc="Constantly evolving our tools to empower small and large businesses." />

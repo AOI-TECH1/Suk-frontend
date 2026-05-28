@@ -62,10 +62,10 @@ const AdminDashboard = () => {
       {/* 1. TOP HEADER */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16">
         <div>
-            <h1 className="text-5xl font-[900] italic uppercase tracking-tighter text-zinc-900 leading-none">
+            <h1 className="text-5xl font-[900]  uppercase tracking-tighter text-zinc-900 leading-none">
                 SuK <span className="text-[#fbb03b]">Command</span>
             </h1>
-            <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em] mt-4 ml-1 italic">Level 4 Admin Authorization Active</p>
+            <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em] mt-4 ml-1 ">Level 4 Admin Authorization Active</p>
         </div>
 
         <div className="flex items-center gap-4">
@@ -98,7 +98,7 @@ const AdminDashboard = () => {
         {/* 4. SYSTEM ACTIVITY & ADs */}
         <div className="space-y-8">
             <div className="bg-zinc-950 rounded-[50px] p-10 text-white shadow-2xl relative overflow-hidden">
-                <h3 className="font-[900] text-2xl uppercase italic leading-none mb-6 text-[#fbb03b]">System Ops</h3>
+                <h3 className="font-[900] text-2xl uppercase  leading-none mb-6 text-[#fbb03b]">System Ops</h3>
                 <div className="space-y-4">
                     <SideLink label="Banner Ad Manager" to="/staff/ads" />
                     <SideLink label="Staff Hierarchy" to="/staff/users" />
@@ -117,7 +117,7 @@ const AdminDashboard = () => {
             <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setShowAddStaff(false)}></div>
             <div className="bg-white w-full max-w-lg rounded-[50px] p-12 relative z-10 shadow-2xl animate-in zoom-in-95 duration-300">
                 <button onClick={() => setShowAddStaff(false)} className="absolute top-8 right-8 text-gray-400 hover:text-black"><X/></button>
-                <h2 className="text-3xl font-black italic uppercase tracking-tighter mb-8">Deploy Staff Account</h2>
+                <h2 className="text-3xl font-black  uppercase tracking-tighter mb-8">Deploy Staff Account</h2>
                 
                 <form onSubmit={handleAddStaff} className="space-y-5">
                     <div className="grid grid-cols-2 gap-4">
@@ -174,7 +174,7 @@ const ManagementCard = ({ title, desc, link, icon, count }) => (
             <div className="text-[#fbb03b] group-hover:scale-110 transition-transform duration-700">{icon}</div>
             <span className="text-[9px] font-black text-gray-400 bg-gray-50 px-3 py-1.5 rounded-full uppercase tracking-widest">{count}</span>
         </div>
-        <h4 className="font-[900] text-2xl uppercase italic text-zinc-900 leading-none mb-3">{title}</h4>
+        <h4 className="font-[900] text-2xl uppercase  text-zinc-900 leading-none mb-3">{title}</h4>
         <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-relaxed pr-10">{desc}</p>
         <div className="mt-8 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#fbb03b] group-hover:gap-4 transition-all">
             Access Portal <ChevronRight size={14} strokeWidth={3} />

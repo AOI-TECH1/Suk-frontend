@@ -93,7 +93,7 @@ const Register = () => {
                 <span className="mx-2">/</span>
                 <span className="text-[#fbb03b]">Register</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight italic">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tight ">
                 Create <span className="text-[#fbb03b]">Account</span>
             </h1>
         </div>
@@ -170,7 +170,7 @@ const Register = () => {
           <div className="hidden md:flex flex-col justify-center items-center bg-[#fbb03b] p-12 text-center relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
               <div className="relative z-10">
-                <h2 className="text-5xl font-black text-black mb-4 italic">Join the <br />Community.</h2>
+                <h2 className="text-5xl font-black text-black mb-4 ">Join the <br />Community.</h2>
                 <p className="text-black/60 font-medium max-w-xs mx-auto text-sm">Create an account to track orders, save items, and receive personalized deals.</p>
                 <img src={Img} alt="User Illustration" className="w-full max-w-[280px] drop-shadow-2xl mx-auto mt-12" />
               </div>

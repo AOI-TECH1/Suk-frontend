@@ -65,7 +65,7 @@ const SellerSettings = () => {
   return (
     <div className="pt-32 pb-20 max-w-5xl mx-auto px-6 font-sans">
       <div className="mb-12">
-        <h1 className="text-4xl font-[900] italic uppercase tracking-tighter text-zinc-900">Settings</h1>
+        <h1 className="text-4xl font-[900]  uppercase tracking-tighter text-zinc-900">Settings</h1>
         <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.3em] mt-2">Manage your brand and settlements</p>
       </div>
 
@@ -76,7 +76,7 @@ const SellerSettings = () => {
             <div className="bg-white border border-gray-100 p-8 rounded-[45px] shadow-sm">
                 <div className="flex items-center gap-3 mb-8 border-b border-gray-50 pb-4">
                     <Store className="text-[#fbb03b]" size={20} />
-                    <h3 className="font-black uppercase italic text-sm tracking-widest">Store Identity</h3>
+                    <h3 className="font-black uppercase  text-sm tracking-widest">Store Identity</h3>
                 </div>
                 
                 <div className="flex flex-col md:flex-row gap-10">
@@ -123,7 +123,7 @@ const SellerSettings = () => {
             <div className="bg-white border border-gray-100 p-8 rounded-[45px] shadow-sm">
                 <div className="flex items-center gap-3 mb-8 border-b border-gray-50 pb-4">
                     <Landmark className="text-[#fbb03b]" size={20} />
-                    <h3 className="font-black uppercase italic text-sm tracking-widest">Settlements</h3>
+                    <h3 className="font-black uppercase  text-sm tracking-widest">Settlements</h3>
                 </div>
 
                 <div className="space-y-6">
@@ -156,7 +156,7 @@ const SellerSettings = () => {
             </div>
 
             <div className="bg-[#fbb03b]/5 border border-[#fbb03b]/10 p-6 rounded-[32px]">
-                <p className="text-[10px] font-bold leading-relaxed text-zinc-600 italic">
+                <p className="text-[10px] font-bold leading-relaxed text-zinc-600 ">
                     Funds are automatically settled to this account within 48 hours of successful delivery.
                 </p>
             </div>

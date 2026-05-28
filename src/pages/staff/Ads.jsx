@@ -70,7 +70,7 @@ const AdManagement = () => {
       <div className="flex justify-between items-end mb-12">
         <div>
            <Link to="/staff/dashboard" className="flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase mb-4 tracking-widest hover:text-black"><ArrowLeft size={14}/> Command Center</Link>
-           <h1 className="text-5xl font-[900] italic uppercase tracking-tighter text-zinc-900 leading-none">Marketing <span className="text-[#fbb03b]">& Ads</span></h1>
+           <h1 className="text-5xl font-[900]  uppercase tracking-tighter text-zinc-900 leading-none">Marketing <span className="text-[#fbb03b]">& Ads</span></h1>
            <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em] mt-4">Global Deployment Hub • {ads.length} Node(s)</p>
         </div>
         <button onClick={() => setShowModal(true)} className="bg-black text-[#fbb03b] font-[900] px-10 py-5 rounded-3xl flex items-center gap-3 hover:scale-105 transition-all shadow-xl shadow-orange-500/10 text-[10px] uppercase tracking-widest">
@@ -90,7 +90,7 @@ const AdManagement = () => {
              </div>
              <div className="p-10 flex justify-between items-center">
                 <div>
-                   <h3 className="font-[900] text-2xl uppercase italic text-zinc-900 leading-none">{ad.title}</h3>
+                   <h3 className="font-[900] text-2xl uppercase  text-zinc-900 leading-none">{ad.title}</h3>
                    <div className="flex items-center gap-2 mt-3 text-gray-400">
                       <Globe size={12}/>
                       <p className="text-[10px] font-bold uppercase tracking-widest">{ad.link || 'Internal Route'}</p>
@@ -109,7 +109,7 @@ const AdManagement = () => {
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-6 bg-zinc-950/90 backdrop-blur-md">
             <div className="bg-white w-full max-w-xl rounded-[60px] p-12 relative shadow-2xl animate-in zoom-in-95">
                 <button onClick={() => setShowModal(false)} className="absolute top-10 right-10 text-gray-400 hover:text-black transition-colors"><X size={32}/></button>
-                <h2 className="text-4xl font-[900] italic uppercase tracking-tighter mb-10">Deploy <span className="text-[#fbb03b]">Campaign</span></h2>
+                <h2 className="text-4xl font-[900]  uppercase tracking-tighter mb-10">Deploy <span className="text-[#fbb03b]">Campaign</span></h2>
                 
                 <form onSubmit={handleCreate} className="space-y-6">
                     <div className="space-y-1">

@@ -97,7 +97,7 @@ const Login = () => {
                 <span className="mx-2">/</span>
                 <span className="text-[#fbb03b]">Login</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">My <span className="text-[#fbb03b]">Account</span></h1>
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter ">My <span className="text-[#fbb03b]">Account</span></h1>
         </div>
       </div>
 

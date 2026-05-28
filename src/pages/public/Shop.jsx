@@ -88,12 +88,12 @@ const Shop = () => {
                 {selectedCat && (
                     <>
                         <HiChevronRight size={10}/>
-                        <span className="text-white italic">{selectedCat}</span>
+                        <span className="text-white ">{selectedCat}</span>
                     </>
                 )}
             </nav>
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-black italic uppercase tracking-tighter text-white">
+            <h1 className="text-4xl md:text-5xl font-black  uppercase tracking-tighter text-white">
                 The <span className="text-[#fbb03b]">Suk</span> Shop
             </h1>
             <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2 max-w-md">
@@ -107,7 +107,7 @@ const Shop = () => {
         {/* --- 2. COMPACT SIDEBAR --- */}
         <aside className={`fixed inset-0 z-[120] lg:relative lg:z-0 lg:block lg:w-60 bg-white lg:bg-transparent p-6 lg:p-0 transition-transform duration-300 ${showMobileFilters ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
           <div className="flex justify-between items-center mb-6 lg:hidden">
-             <h2 className="font-black uppercase italic text-sm">Filters</h2>
+             <h2 className="font-black uppercase  text-sm">Filters</h2>
              <button onClick={() => setShowMobileFilters(false)}><MdClose size={20}/></button>
           </div>
 
@@ -217,7 +217,7 @@ const Shop = () => {
             </div>
           ) : (
             <div className="py-24 text-center bg-white rounded-[40px] border border-dashed border-gray-200">
-               <h3 className="text-sm font-black uppercase italic text-gray-300 tracking-widest">No Results Found</h3>
+               <h3 className="text-sm font-black uppercase  text-gray-300 tracking-widest">No Results Found</h3>
                <button onClick={clearFilters} className="mt-2 text-[#fbb03b] font-bold text-[10px] underline uppercase">Clear Filters</button>
             </div>
           )}

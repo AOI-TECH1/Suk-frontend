@@ -103,7 +103,7 @@ const UserManagement = () => {
       <div className="flex flex-col lg:flex-row justify-between items-end gap-8 mb-12">
         <div>
            <Link to="/staff/dashboard" className="flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase mb-4 hover:text-black transition-colors"><ArrowLeft size={14}/> Command Center</Link>
-           <h1 className="text-5xl font-[900] italic uppercase tracking-tighter text-zinc-900 leading-none">Identity <span className="text-[#fbb03b]">Control</span></h1>
+           <h1 className="text-5xl font-[900]  uppercase tracking-tighter text-zinc-900 leading-none">Identity <span className="text-[#fbb03b]">Control</span></h1>
            <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.4em] mt-3">Auth Database Management • {users.length} Active Nodes</p>
         </div>
         
@@ -190,7 +190,7 @@ const UserManagement = () => {
             <div className="bg-white w-full max-w-xl rounded-[60px] p-12 relative shadow-2xl animate-in zoom-in-95 duration-300">
                 <button onClick={() => setShowAddModal(false)} className="absolute top-10 right-10 text-gray-400 hover:text-black"><X size={32}/></button>
                 <div className="mb-10">
-                    <h2 className="text-4xl font-[900] italic uppercase tracking-tighter">Deploy <span className="text-[#fbb03b]">Staff</span></h2>
+                    <h2 className="text-4xl font-[900]  uppercase tracking-tighter">Deploy <span className="text-[#fbb03b]">Staff</span></h2>
                     <p className="text-gray-400 text-[10px] font-black uppercase mt-2 tracking-widest">Assign internal protocol permissions</p>
                 </div>
                 

@@ -8,7 +8,7 @@ const BuyerDashboard = () => {
 
   return (
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6">
-      <h1 className="text-4xl font-black mb-2 italic uppercase">My Account</h1>
+      <h1 className="text-4xl font-black mb-2  uppercase">My Account</h1>
       <p className="text-gray-500 font-medium mb-12">Hello, {user?.full_name}! Welcome to your personal shopper dashboard.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

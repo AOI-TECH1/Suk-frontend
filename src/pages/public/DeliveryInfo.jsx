@@ -17,7 +17,7 @@ const DeliveryInfo = () => {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">Delivery Info</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 Shipping <span className="text-[#fbb03b]">&</span> Logistics
             </h1>
         </div>
@@ -35,7 +35,7 @@ const DeliveryInfo = () => {
                     <MapPin size={24} />
                 </div>
                 <div>
-                    <h2 className="text-2xl font-black uppercase italic tracking-tight mb-4 text-zinc-900">Shipping Coverage</h2>
+                    <h2 className="text-2xl font-black uppercase  tracking-tight mb-4 text-zinc-900">Shipping Coverage</h2>
                     <p className="text-gray-500 font-medium leading-relaxed">
                         SuK Marketplace currently delivers to all major cities across **Nigeria**. 
                         We partner with top-tier logistics providers like GIGL, DHL, and local expert dispatchers 
@@ -50,7 +50,7 @@ const DeliveryInfo = () => {
                     <Clock size={24} />
                 </div>
                 <div className="flex-1">
-                    <h2 className="text-2xl font-black uppercase italic tracking-tight mb-4 text-zinc-900">Standard Delivery Times</h2>
+                    <h2 className="text-2xl font-black uppercase  tracking-tight mb-4 text-zinc-900">Standard Delivery Times</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <TimeCard location="Lagos" time="1-2 Days" />
                         <TimeCard location="Abuja / PH" time="3-4 Days" />
@@ -64,7 +64,7 @@ const DeliveryInfo = () => {
                 <div className="hidden sm:block">
                     <ShieldCheck size={40} className="text-[#fbb03b]" />
                 </div>
-                <p className="text-sm text-orange-900 font-bold leading-relaxed italic">
+                <p className="text-sm text-orange-900 font-bold leading-relaxed ">
                     "All SuK deliveries are insured. If your item is damaged during transit, 
                     we offer a full refund or immediate replacement as part of our Buyer Protection program."
                 </p>

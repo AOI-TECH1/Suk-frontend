@@ -24,7 +24,7 @@ const MerchantBanner = () => {
                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">SuK Merchant Network</span>
                 </div>
 
-                <h2 className="text-5xl md:text-8xl font-[900] text-white italic uppercase leading-[0.85] tracking-tighter mb-8">
+                <h2 className="text-5xl md:text-8xl font-[900] text-white  uppercase leading-[0.85] tracking-tighter mb-8">
                     Own The <br /> 
                     <span className="text-[#fbb03b]">Market</span> <br /> 
                     Not Just <br />
@@ -50,7 +50,7 @@ const MerchantBanner = () => {
                             <ShieldCheck className="text-[#fbb03b]" size={24} />
                         </div>
                         <div>
-                            <p className="text-white font-black text-xs uppercase italic">Verified Selling</p>
+                            <p className="text-white font-black text-xs uppercase ">Verified Selling</p>
                             <p className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">Secure Merchant Portal</p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ const MerchantBanner = () => {
                         </div>
                     </div>
                     
-                    <h3 className="text-white font-black text-3xl mb-2 uppercase italic leading-none">Elite <br/> Merchant</h3>
+                    <h3 className="text-white font-black text-3xl mb-2 uppercase  leading-none">Elite <br/> Merchant</h3>
                     <div className="w-12 h-1 bg-[#fbb03b] mb-4 mx-auto"></div>
                     
                     <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em] leading-loose">

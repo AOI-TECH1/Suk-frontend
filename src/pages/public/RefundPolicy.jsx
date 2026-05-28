@@ -20,7 +20,7 @@ const RefundPolicy = () => {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">Refund Policy</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 Returns <span className="text-[#fbb03b]">&</span> Refunds
             </h1>
         </div>
@@ -32,7 +32,7 @@ const RefundPolicy = () => {
           
           {/* Header Intro */}
           <div className="mb-12 border-b border-gray-50 pb-8 text-center md:text-left">
-            <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-4">Our Guarantee</h2>
+            <h2 className="text-3xl font-black uppercase  tracking-tight text-zinc-900 mb-4">Our Guarantee</h2>
             <p className="text-gray-500 font-medium leading-relaxed max-w-2xl text-sm">
                 At SuK, we prioritize your satisfaction. If you are not entirely happy with your purchase, 
                 we are here to help you get your money back or exchange your item quickly.
@@ -46,7 +46,7 @@ const RefundPolicy = () => {
                 <div className="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-[#fbb03b] mb-6 group-hover:bg-[#fbb03b] group-hover:text-black transition-colors duration-300">
                     <RotateCcw size={24} />
                 </div>
-                <h3 className="text-xl font-black uppercase italic tracking-tight mb-4 text-zinc-900">7-Day Return Policy</h3>
+                <h3 className="text-xl font-black uppercase  tracking-tight mb-4 text-zinc-900">7-Day Return Policy</h3>
                 <p className="text-xs text-gray-500 font-medium leading-loose">
                     You have exactly **7 days** after receiving your item to request a return. 
                     The item must be in its original condition, unworn or unused, with tags, 
@@ -59,7 +59,7 @@ const RefundPolicy = () => {
                 {/* Decorative Icon */}
                 <ShieldAlert size={100} className="absolute -right-8 -bottom-8 opacity-5 group-hover:rotate-12 transition-transform duration-700" />
                 
-                <h3 className="text-xl font-black uppercase italic tracking-tight mb-6 text-[#fbb03b]">Non-Returnable Items</h3>
+                <h3 className="text-xl font-black uppercase  tracking-tight mb-6 text-[#fbb03b]">Non-Returnable Items</h3>
                 <ul className="space-y-4">
                     <li className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider opacity-80">
                         <CheckCircle2 size={16} className="text-[#fbb03b]" /> Underwear & Lingerie
@@ -79,7 +79,7 @@ const RefundPolicy = () => {
 
           {/* Refund Process Steps */}
           <div className="mt-16 p-8 bg-orange-50 rounded-[32px] border border-orange-100">
-             <h3 className="text-lg font-black uppercase italic text-orange-900 mb-6 flex items-center gap-2">
+             <h3 className="text-lg font-black uppercase  text-orange-900 mb-6 flex items-center gap-2">
                 <HelpCircle size={20} /> The Refund Process
              </h3>
              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">

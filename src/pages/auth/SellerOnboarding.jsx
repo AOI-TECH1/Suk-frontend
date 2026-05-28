@@ -32,7 +32,7 @@ const SellerOnboarding = () => {
            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
               👋
            </div>
-           <h2 className="text-2xl font-black text-gray-900 mb-2 uppercase italic tracking-tighter">Login Required</h2>
+           <h2 className="text-2xl font-black text-gray-900 mb-2 uppercase  tracking-tighter">Login Required</h2>
            <p className="text-gray-500 mb-8 font-medium">You need to be logged in to your SuK account to set up a professional store.</p>
            <div className="space-y-3">
               <Link to="/login" className="block w-full bg-black text-white font-black py-4 rounded-2xl hover:bg-zinc-800 transition-all uppercase tracking-widest text-[10px]">
@@ -91,7 +91,7 @@ const SellerOnboarding = () => {
                     <p className="font-bold text-white text-sm">Auth ID: {user?.email}</p>
                 </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-[900] uppercase italic leading-none tracking-tighter">
+            <h1 className="text-5xl md:text-7xl font-[900] uppercase  leading-none tracking-tighter">
               Setup Your <span className="text-[#fbb03b]">Store.</span>
             </h1>
         </div>
@@ -114,7 +114,7 @@ const SellerOnboarding = () => {
               <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
                  <div className="flex items-center gap-3 border-b border-gray-100 pb-4">
                     <Store className="text-[#fbb03b]" size={20}/>
-                    <h3 className="font-black uppercase italic text-sm tracking-widest">Business Identity</h3>
+                    <h3 className="font-black uppercase  text-sm tracking-widest">Business Identity</h3>
                  </div>
 
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -149,7 +149,7 @@ const SellerOnboarding = () => {
               <div className="space-y-10 animate-in fade-in slide-in-from-right-4 duration-500">
                 <div className="flex items-center gap-3 border-b border-gray-100 pb-4">
                     <Landmark className="text-[#fbb03b]" size={20}/>
-                    <h3 className="font-black uppercase italic text-sm tracking-widest">Payout Details</h3>
+                    <h3 className="font-black uppercase  text-sm tracking-widest">Payout Details</h3>
                  </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

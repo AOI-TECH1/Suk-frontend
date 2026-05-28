@@ -92,7 +92,7 @@ const SellerProducts = () => {
         <div>
            <div className="flex items-center gap-3 mb-2">
               <Package className="text-[#fbb03b]" size={28} />
-              <h1 className="text-4xl font-[900] italic uppercase tracking-tighter text-zinc-900">Inventory</h1>
+              <h1 className="text-4xl font-[900]  uppercase tracking-tighter text-zinc-900">Inventory</h1>
            </div>
            <p className="text-gray-400 text-[10px] font-black uppercase tracking-[0.3em]">
              Manage {products.length} live listings on <span className="text-black">{store?.subscription_plan} TIER</span>
@@ -177,7 +177,7 @@ const SellerProducts = () => {
         {filteredProducts.length === 0 && (
             <div className="py-40 text-center">
                 <Package size={60} className="mx-auto text-gray-100 mb-6" />
-                <h3 className="text-2xl font-black italic uppercase tracking-tighter text-gray-300">No Listings Found</h3>
+                <h3 className="text-2xl font-black  uppercase tracking-tighter text-gray-300">No Listings Found</h3>
                 <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mt-2">Adjust search or add new products</p>
             </div>
         )}
@@ -192,7 +192,7 @@ const SellerProducts = () => {
                 <Zap size={120} fill="currentColor" />
              </div>
              <div className="relative z-10">
-                <h3 className="font-black text-2xl uppercase italic leading-none text-[#fbb03b]">Promotion Desk</h3>
+                <h3 className="font-black text-2xl uppercase  leading-none text-[#fbb03b]">Promotion Desk</h3>
                 <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mt-3 max-w-xs">
                     Current Plan: <span className="text-white">{store?.subscription_plan || 'FREE'}</span>. 
                     Upgrade to PRO for unlimited listings and prioritized search.
@@ -207,7 +207,7 @@ const SellerProducts = () => {
           <div className="bg-white border border-gray-100 p-10 rounded-[50px] flex flex-col justify-between shadow-sm relative overflow-hidden">
              <div className="flex justify-between items-start">
                 <div>
-                    <h3 className="font-black text-2xl uppercase italic leading-none text-zinc-900">Reports</h3>
+                    <h3 className="font-black text-2xl uppercase  leading-none text-zinc-900">Reports</h3>
                     <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mt-3">
                         Export your entire inventory to a professional CSV file.
                     </p>

@@ -26,7 +26,7 @@ const WishList = () => {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">Saved Items</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 My <span className="text-[#fbb03b]">Wishlist</span>
             </h1>
         </div>
@@ -41,7 +41,7 @@ const WishList = () => {
             <div className="bg-orange-50 w-24 h-24 rounded-full flex items-center justify-center mb-8 shadow-inner">
               <Heart size={48} className="text-[#fbb03b]" fill="#fbb03b" />
             </div>
-            <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-4">Your wishlist is empty</h2>
+            <h2 className="text-3xl font-black uppercase  tracking-tight text-zinc-900 mb-4">Your wishlist is empty</h2>
             <p className="text-gray-400 font-medium mb-10 max-w-sm">
               Save items you love here to find them easily later. We'll even notify you when they go on sale!
             </p>

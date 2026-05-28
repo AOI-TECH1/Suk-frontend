@@ -73,9 +73,9 @@ const ProductCard = ({ product }) => {
         </p>
 
         <Link to={`/product/${product.slug || product.id}`}>
-          <h3 className="text-[11px] font-black text-zinc-800 line-clamp-1 mb-3 uppercase italic tracking-tighter hover:text-[#fbb03b] transition-colors leading-tight">
+          <h6 className="text-[11px] font-black text-zinc-800 line-clamp-1 mb-3 uppercase  tracking-tighter hover:text-[#fbb03b] transition-colors leading-tight">
             {product.name}
-          </h3>
+          </h6>
         </Link>
         
         <div className="flex items-center justify-between gap-2 mb-4">
@@ -98,7 +98,7 @@ const ProductCard = ({ product }) => {
             className="bg-[#fbb03b] text-white px-3 py-2 rounded-lg flex items-center gap-2 hover:bg-zinc-900 transition-all active:scale-95 shadow-sm"
           >
             <ShoppingCart size={12} fill="currentColor" />
-            <span className="text-[9px] font-black uppercase italic tracking-tighter">Add to cart</span>
+            <span className="text-[9px] font-black uppercase  tracking-tighter">Add to cart</span>
           </button>
         </div>
 

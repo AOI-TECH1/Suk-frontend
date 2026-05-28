@@ -18,7 +18,7 @@ const BrowserByCategory = () => {
 
   return (
     <div className="px-4 pb-10 max-w-7xl mx-auto">
-      <h1 className='text-center text-xl sm:text-2xl font-black uppercase italic tracking-tighter py-10'>
+      <h1 className='text-center text-xl sm:text-2xl font-black uppercase  tracking-tighter py-10'>
         Browse By Category
       </h1>
 
@@ -31,9 +31,9 @@ const BrowserByCategory = () => {
           >
             {/* The "group-hover" classes make the icon change when the box is hovered */}
             <cat.icon className='text-2xl sm:text-3xl transition-transform group-hover:rotate-12' />
-            <h4 className='pt-4 text-xs sm:text-sm font-black uppercase italic tracking-widest'>
+            <h5 className='pt-4 text-xs sm:text-sm font-black uppercase tracking-widest'>
               {cat.name}
-            </h4>
+            </h5>
           </Link>
         ))}
       </section>

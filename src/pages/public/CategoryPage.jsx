@@ -39,7 +39,7 @@ const CategoryPage = () => {
           <span className="text-black">{slug.replace('-', ' ')}</span>
         </nav>
         
-        <h1 className="text-5xl font-[900] uppercase italic tracking-tighter text-zinc-900 border-l-8 border-[#fbb03b] pl-6">
+        <h1 className="text-5xl font-[900] uppercase  tracking-tighter text-zinc-900 border-l-8 border-[#fbb03b] pl-6">
             {slug.replace('-', ' ')}
         </h1>
       </div>
@@ -59,7 +59,7 @@ const CategoryPage = () => {
         ) : (
           <div className="py-20 text-center bg-white rounded-[40px] border-2 border-dashed border-gray-100">
              <ShoppingBag size={48} className="mx-auto text-gray-200 mb-4" />
-             <h3 className="font-black uppercase italic text-gray-400">No items in this category yet</h3>
+             <h3 className="font-black uppercase  text-gray-400">No items in this category yet</h3>
              <Link to="/shop" className="mt-4 inline-block text-[#fbb03b] font-bold underline">Browse All Categories</Link>
           </div>
         )}

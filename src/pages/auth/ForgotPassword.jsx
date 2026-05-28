@@ -40,7 +40,7 @@ const ForgotPassword = () => {
                     <ArrowLeft size={12} /> Back to Login
                 </Link>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter ">
                 Recover <span className="text-[#fbb03b]">Access</span>
             </h1>
         </div>

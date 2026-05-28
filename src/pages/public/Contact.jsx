@@ -45,7 +45,7 @@ const Contact = () => {
                 <MdChevronRight size={16} className="text-[#fbb03b]" />
                 <span className="text-white">Contact Us</span>
             </nav>
-            <h1 className="text-4xl md:text-6xl font-[900] uppercase italic tracking-tighter leading-none text-balance">
+            <h1 className="text-4xl md:text-6xl font-[900] uppercase  tracking-tighter leading-none text-balance">
                 Get In <span className="text-[#fbb03b]">Touch.</span>
             </h1>
             <p className="mt-4 text-gray-300 font-medium max-w-md text-sm border-l-2 border-[#fbb03b] pl-4">
@@ -69,7 +69,7 @@ const Contact = () => {
             <ContactInfoCard 
               icon={<MdOutlineEmail size={24} className="text-[#fbb03b]" />} 
               title="Email Us" 
-              detail="support@sukmarket.ng" 
+              detail="support@sukmarket.com.ng" 
               subDetail="Online support 24/7"
             />
             <ContactInfoCard 
@@ -94,7 +94,7 @@ const Contact = () => {
           {/* RIGHT SIDE: CONTACT FORM */}
           <div className="lg:col-span-2">
             <div className="bg-white p-8 md:p-12 rounded-[40px] shadow-2xl border border-gray-100 -mt-20 relative z-30">
-               <h3 className="text-3xl font-black text-zinc-900 uppercase italic tracking-tight mb-2">Send a Message</h3>
+               <h3 className="text-3xl font-black text-zinc-900 uppercase  tracking-tight mb-2">Send a Message</h3>
                <p className="text-gray-400 text-sm font-medium mb-10">Use the form below to reach our management team.</p>
                
                <form onSubmit={handleSubmit} className="space-y-8">
@@ -138,15 +138,36 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* --- 3. MAP PLACEHOLDER SECTION --- */}
+      {/* --- 3. DYNAMIC INTERACTIVE MAP --- */}
       <div className="max-w-7xl mx-auto px-6 pb-24">
-         <div className="w-full h-96 bg-gray-200 rounded-[50px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 border border-gray-100 shadow-inner flex items-center justify-center relative">
-            <div className="text-center">
-                <MdOutlineLocationOn size={56} className="text-[#fbb03b] mx-auto mb-4 animate-bounce" />
-                <p className="font-black uppercase tracking-widest text-gray-400">SuK Headquarters, Lagos State</p>
+         <div className="w-full h-[500px] bg-gray-100 rounded-[60px] overflow-hidden border border-gray-100 shadow-2xl relative group">
+            <iframe 
+                title="SuK Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.717646698696!2d3.4184650758455793!3d6.430292524249103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8ad78848d70b%3A0xc319163863412574!2sVictoria%20Island%2C%20Lagos!5e0!3m2!1sen!2sng!4v1716194784964!5m2!1sen!2sng" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale group-hover:grayscale-0 transition-all duration-1000"
+            ></iframe>
+            
+            {/* Elegant Floating Badge over Map */}
+            <div className="absolute top-10 left-10 z-10 bg-black/90 backdrop-blur-md p-6 rounded-[32px] border border-white/10 shadow-2xl pointer-events-none transition-transform group-hover:-translate-y-2">
+                <div className="flex items-center gap-4">
+                    <div className="bg-[#fbb03b] p-3 rounded-2xl">
+                        <MdOutlineLocationOn size={24} className="text-black" />
+                    </div>
+                    <div>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Headquarters</p>
+                        <p className="text-white font-black text-sm uppercase ">Victoria Island, Lagos</p>
+                    </div>
+                </div>
             </div>
-            {/* Overlay Frame */}
-            <div className="absolute inset-0 pointer-events-none border-[20px] border-white rounded-[50px]"></div>
+
+            {/* Inner Border Frame (The High-End SuK Look) */}
+            <div className="absolute inset-0 pointer-events-none border-[12px] md:border-[24px] border-white/40 rounded-[60px]"></div>
          </div>
       </div>
 

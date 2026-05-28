@@ -77,7 +77,7 @@ const Checkout = () => {
   if (cart.length === 0) {
     return (
       <div className="pt-40 pb-20 text-center bg-white">
-        <h2 className="text-xl font-black uppercase italic">Your bag is empty</h2>
+        <h2 className="text-xl font-black uppercase ">Your bag is empty</h2>
         <button onClick={() => navigate('/shop')} className="mt-4 text-[#fbb03b] font-bold underline uppercase tracking-widest text-xs">Continue Shopping</button>
       </div>
     );
@@ -85,7 +85,7 @@ const Checkout = () => {
 
   return (
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6 font-sans bg-white">
-      <h1 className="text-3xl font-black italic uppercase tracking-tighter mb-10 text-black">Checkout</h1>
+      <h1 className="text-3xl font-black  uppercase tracking-tighter mb-10 text-black">Checkout</h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         
@@ -96,7 +96,7 @@ const Checkout = () => {
            <section className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                  <div className="p-2 bg-[#fbb03b]/10 rounded-lg"><MapPin className="text-[#fbb03b]" size={20} /></div>
-                 <h3 className="font-black text-lg uppercase italic">Billing Details</h3>
+                 <h3 className="font-black text-lg uppercase ">Billing Details</h3>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -127,7 +127,7 @@ const Checkout = () => {
            <section className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-8">
                  <div className="p-2 bg-[#fbb03b]/10 rounded-lg"><Truck className="text-[#fbb03b]" size={20} /></div>
-                 <h3 className="font-black text-lg uppercase italic">Logistics Method</h3>
+                 <h3 className="font-black text-lg uppercase ">Logistics Method</h3>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -137,7 +137,7 @@ const Checkout = () => {
                     onClick={() => setShippingMethod(key)}
                     className={`cursor-pointer p-5 rounded-2xl border-2 transition-all ${shippingMethod === key ? 'border-[#fbb03b] bg-[#fbb03b]/5' : 'border-gray-50 bg-gray-50'}`}
                   >
-                    <p className="font-black text-[10px] uppercase italic mb-1">{value.label}</p>
+                    <p className="font-black text-[10px] uppercase  mb-1">{value.label}</p>
                     <p className="font-black text-sm text-[#fbb03b]">₦{value.price.toLocaleString()}</p>
                   </div>
                 ))}
@@ -147,7 +147,7 @@ const Checkout = () => {
            {/* 3. ORDER REVIEW */}
            <section className="bg-white p-8 rounded-[32px] border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
-                 <ShoppingBag className="text-[#fbb03b]" /><h3 className="font-black text-lg uppercase italic">Review Order</h3>
+                 <ShoppingBag className="text-[#fbb03b]" /><h3 className="font-black text-lg uppercase ">Review Order</h3>
               </div>
               <div className="space-y-3">
                 {cart.map((item) => (
@@ -176,7 +176,7 @@ const Checkout = () => {
                 <span>Logistics ({shippingOptions[shippingMethod].label})</span> 
                 <span>₦{deliveryPrice.toLocaleString()}</span>
               </div>
-              <div className="pt-5 border-t border-white/10 flex justify-between text-xl font-black italic">
+              <div className="pt-5 border-t border-white/10 flex justify-between text-xl font-black ">
                  <span>TOTAL</span> <span className="text-[#fbb03b]">₦{total.toLocaleString()}</span>
               </div>
            </div>

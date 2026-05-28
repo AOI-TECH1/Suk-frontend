@@ -25,7 +25,7 @@ const Home = () => {
       <div className="bg-[#0a0a0a] py-4 border-y border-white/5 overflow-hidden">
         <div className="flex animate-marquee gap-20 whitespace-nowrap">
             {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="flex items-center gap-4 text-[#fbb03b] font-black uppercase italic tracking-tighter text-sm">
+                <div key={i} className="flex items-center gap-4 text-[#fbb03b] font-black uppercase  tracking-tighter text-sm">
                     <Flame size={18} fill="#fbb03b" className="animate-pulse" /> 
                     FLASH DEALS ENDING SOON 
                     <span className="text-white ml-2">UP TO 75% OFF EVERYTHING</span>
@@ -39,10 +39,10 @@ const Home = () => {
         <BrowserByCategory />
       </section>
 
-      {/* 4. TRENDING / FEATURED ITEMS */}
+      {/* 4. TRENDING / FEATURED ITEMS
       <section className="py-10 bg-gray-50/50">
-        <TrendySlide />
-      </section>
+        // <TrendySlide />
+      </section> */}
 
       {/* 5. MAIN PRODUCT INVENTORY GRID */}
       <section className="pb-20">
@@ -62,7 +62,7 @@ const Home = () => {
                       <span className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-300">Free Merchant Tier Available</span>
                   </div>
 
-                  <h2 className="text-5xl md:text-8xl font-[900] text-white italic uppercase leading-[0.85] tracking-tighter mb-8">
+                  <h2 className="text-5xl md:text-8xl font-[900] text-white  uppercase leading-[0.85] tracking-tighter mb-8">
                       Own The <br /> 
                       <span className="text-[#fbb03b]">Market</span> <br /> 
                       Not Just <br />
@@ -91,7 +91,7 @@ const Home = () => {
                           </div>
                       </div>
 
-                      <h3 className="text-white font-black text-3xl mb-1 uppercase italic leading-none">Elite <br/> Merchant</h3>
+                      <h3 className="text-white font-black text-3xl mb-1 uppercase  leading-none">Elite <br/> Merchant</h3>
                       <p className="text-[10px] text-gray-500 font-black uppercase tracking-[0.4em] mt-4 leading-loose">
                           Zero Setup Fee <br />
                           Unlimited Reach <br />

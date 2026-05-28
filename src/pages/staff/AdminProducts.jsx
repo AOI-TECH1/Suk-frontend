@@ -37,7 +37,7 @@ const AdminProducts = () => {
       <Link to="/staff/dashboard" className="inline-flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase mb-10"><ArrowLeft size={14}/> Dashboard</Link>
       
       <div className="flex justify-between items-end mb-12">
-        <h1 className="text-4xl font-[900] italic uppercase tracking-tighter">Marketplace <span className="text-[#fbb03b]">Vault</span></h1>
+        <h1 className="text-4xl font-[900]  uppercase tracking-tighter">Marketplace <span className="text-[#fbb03b]">Vault</span></h1>
         <input placeholder="Search SKU..." value={search} onChange={(e) => setSearch(e.target.value)} className="bg-white border border-gray-100 rounded-2xl py-3 px-6 text-xs font-bold outline-none focus:border-[#fbb03b]" />
       </div>
 

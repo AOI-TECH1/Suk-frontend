@@ -140,7 +140,7 @@ const Navbar = () => {
                     <div className="mt-4 pt-3 border-t border-gray-100">
                       <div className="flex justify-between items-center mb-3 px-1">
                         <span className="text-[9px] font-black text-gray-400 uppercase">Subtotal</span>
-                        <span className="font-black text-xs text-zinc-900 italic">₦{subtotal.toLocaleString()}</span>
+                        <span className="font-black text-xs text-zinc-900 ">₦{subtotal.toLocaleString()}</span>
                       </div>
                       <button 
                         onClick={handleCheckoutClick}

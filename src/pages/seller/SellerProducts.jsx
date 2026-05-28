@@ -13,7 +13,7 @@ const SellerProducts = () => {
   return (
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6">
       <div className="flex justify-between items-end mb-12">
-         <h1 className="text-4xl font-black italic uppercase tracking-tighter">My Inventory</h1>
+         <h1 className="text-4xl font-black  uppercase tracking-tighter">My Inventory</h1>
          <Link to="/seller/add-product" className="text-xs font-black uppercase tracking-widest border-b-2 border-[#fbb03b] pb-1">Add New Item</Link>
       </div>
 

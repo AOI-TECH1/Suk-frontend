@@ -27,11 +27,11 @@ const BuyerSettings = () => {
     <div className="pt-32 pb-20 max-w-3xl mx-auto px-6">
       <div className="bg-white p-10 rounded-[40px] shadow-2xl border border-gray-100">
         <div className="flex items-center gap-4 mb-10">
-           <div className="w-16 h-16 bg-[#fbb03b] rounded-2xl flex items-center justify-center text-black font-black text-2xl italic">
+           <div className="w-16 h-16 bg-[#fbb03b] rounded-2xl flex items-center justify-center text-black font-black text-2xl ">
               {user?.full_name?.charAt(0)}
            </div>
            <div>
-              <h2 className="text-3xl font-black italic uppercase tracking-tighter">Account Settings</h2>
+              <h2 className="text-3xl font-black  uppercase tracking-tighter">Account Settings</h2>
               <p className="text-gray-400 text-xs font-bold uppercase tracking-widest">Manage your profile info</p>
            </div>
         </div>

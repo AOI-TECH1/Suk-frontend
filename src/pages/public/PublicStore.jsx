@@ -54,7 +54,7 @@ const PublicStore = () => {
   if (loading) return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-white">
         <Loader2 className="animate-spin text-[#fbb03b] mb-4" size={40} />
-        <p className="font-black uppercase italic text-[10px] tracking-widest text-gray-400">Syncing Storefront...</p>
+        <p className="font-black uppercase  text-[10px] tracking-widest text-gray-400">Syncing Storefront...</p>
     </div>
   );
 
@@ -62,7 +62,7 @@ const PublicStore = () => {
   if (!sellerInfo && products.length === 0) return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#fcfcfc] px-6 text-center">
         <AlertTriangle size={64} className="text-gray-200 mb-6" />
-        <h2 className="text-4xl font-[900] italic uppercase tracking-tighter text-zinc-900">Store Not Found</h2>
+        <h2 className="text-4xl font-[900]  uppercase tracking-tighter text-zinc-900">Store Not Found</h2>
         <p className="text-gray-400 text-sm font-bold uppercase tracking-widest mt-2 max-w-xs">The merchant terminal you are looking for does not exist or has been decommissioned.</p>
         <Link to="/shop" className="mt-10 bg-black text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-[#fbb03b] hover:text-black transition-all">Return to Marketplace</Link>
     </div>
@@ -95,7 +95,7 @@ const PublicStore = () => {
                 {/* Dynamic Identity */}
                 <div className="text-center md:text-left mb-4">
                     <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
-                        <h1 className="text-5xl md:text-8xl font-[900] italic uppercase text-white tracking-tighter leading-none">
+                        <h1 className="text-5xl md:text-8xl font-[900]  uppercase text-white tracking-tighter leading-none">
                             {storeName}
                         </h1>
                         <ShieldCheck className="text-[#fbb03b] hidden lg:block" size={40} strokeWidth={2.5} />
@@ -124,11 +124,11 @@ const PublicStore = () => {
             {/* Sidebar: Merchant Metadata */}
             <div className="lg:col-span-1 space-y-12">
                 <div className="bg-white border border-gray-100 p-10 rounded-[50px] shadow-sm">
-                    <h3 className="font-black uppercase italic text-xs tracking-[0.2em] mb-8 flex items-center gap-3 text-zinc-900">
+                    <h3 className="font-black uppercase  text-xs tracking-[0.2em] mb-8 flex items-center gap-3 text-zinc-900">
                         <Info size={18} className="text-[#fbb03b]" /> About Vendor
                     </h3>
                     
-                    <p className="text-sm font-bold leading-relaxed text-gray-400 mb-10 italic">
+                    <p className="text-sm font-bold leading-relaxed text-gray-400 mb-10 ">
                         "{sellerInfo?.seller_profile?.store_description || `${storeName} is a verified merchant on the SuK platform, committed to quality and speed.`}"
                     </p>
                     
@@ -149,7 +149,7 @@ const PublicStore = () => {
                 {/* Trust Card */}
                 <div className="bg-zinc-900 p-10 rounded-[50px] shadow-2xl text-white relative overflow-hidden">
                     <ShieldCheck size={100} className="absolute -right-8 -bottom-8 opacity-5 text-white" />
-                    <h4 className="font-black text-lg uppercase italic leading-none mb-3">Authentic Gear</h4>
+                    <h4 className="font-black text-lg uppercase  leading-none mb-3">Authentic Gear</h4>
                     <p className="text-[10px] font-bold text-gray-500 leading-relaxed uppercase tracking-widest">
                         Every listing from this store has been verified for quality and serial consistency.
                     </p>
@@ -160,7 +160,7 @@ const PublicStore = () => {
             <div className="lg:col-span-3">
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-12 border-b border-gray-100 pb-8">
                     <div>
-                        <h2 className="text-3xl font-[900] italic uppercase tracking-tighter text-zinc-900">
+                        <h2 className="text-3xl font-[900]  uppercase tracking-tighter text-zinc-900">
                             Merchant <span className="text-[#fbb03b]">Vault</span>
                         </h2>
                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mt-1">Authorized Listings Only</p>
@@ -176,7 +176,7 @@ const PublicStore = () => {
                 ) : (
                     <div className="py-40 text-center bg-white rounded-[60px] border-2 border-dashed border-gray-100">
                         <Package size={56} className="mx-auto text-gray-100 mb-6" />
-                        <h3 className="text-xl font-black uppercase italic text-gray-300 tracking-widest">Vault is currently empty</h3>
+                        <h3 className="text-xl font-black uppercase  text-gray-300 tracking-widest">Vault is currently empty</h3>
                         <p className="text-[10px] font-bold text-gray-400 uppercase mt-2">Check back later for new inventory</p>
                     </div>
                 )}
@@ -187,7 +187,7 @@ const PublicStore = () => {
 
       {/* Futuristic Watermark */}
       <div className="pb-32 text-center opacity-[0.04] pointer-events-none select-none">
-           <h2 className="text-[12rem] font-black italic uppercase tracking-tighter text-zinc-950 leading-none">
+           <h2 className="text-[12rem] font-black  uppercase tracking-tighter text-zinc-950 leading-none">
              {storeName.split(' ')[0]}
            </h2>
       </div>

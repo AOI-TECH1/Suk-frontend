@@ -23,7 +23,7 @@ const AdminOrders = () => {
   return (
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6 font-sans">
       <Link to="/staff/dashboard" className="inline-flex items-center gap-2 text-gray-400 text-[10px] font-black uppercase mb-10"><ArrowLeft size={14}/> Dashboard</Link>
-      <h1 className="text-4xl font-[900] italic uppercase tracking-tighter mb-12">Global <span className="text-[#fbb03b]">Logistics</span></h1>
+      <h1 className="text-4xl font-[900]  uppercase tracking-tighter mb-12">Global <span className="text-[#fbb03b]">Logistics</span></h1>
 
       <div className="bg-white rounded-[40px] border border-gray-100 shadow-sm overflow-hidden">
         <table className="w-full text-left">

@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">Legal</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 Privacy <span className="text-[#fbb03b]">Policy</span>
             </h1>
         </div>
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
                 </div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Security Standard 2026</p>
             </div>
-            <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-6">Your Data is Yours.</h2>
+            <h2 className="text-3xl font-black uppercase  tracking-tight text-zinc-900 mb-6">Your Data is Yours.</h2>
             <p className="text-gray-500 font-medium leading-relaxed max-w-3xl text-sm md:text-base">
                 At SuK Marketplace, we treat your information with the highest level of security. 
                 This policy outlines how we handle your digital footprint to ensure a safe and transparent shopping experience.
@@ -53,7 +53,7 @@ const PrivacyPolicy = () => {
                 <div className="p-3 bg-black text-[#fbb03b] rounded-xl group-hover:bg-[#fbb03b] group-hover:text-black transition-colors">
                   <Database size={20} />
                 </div>
-                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight">Data Collection</h3>
+                <h3 className="text-lg font-black uppercase  text-zinc-900 tracking-tight">Data Collection</h3>
               </div>
               <p className="text-xs text-gray-500 font-medium leading-loose mb-6">
                 We collect essential details to facilitate smooth transactions and logistics across Nigeria.
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
                 <div className="p-3 bg-black text-[#fbb03b] rounded-xl group-hover:bg-[#fbb03b] group-hover:text-black transition-colors">
                   <Lock size={20} />
                 </div>
-                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight">Payment Security</h3>
+                <h3 className="text-lg font-black uppercase  text-zinc-900 tracking-tight">Payment Security</h3>
               </div>
               <p className="text-xs text-gray-500 font-medium leading-loose">
                 Financial security is our priority. All transactions are handled by **Paystack** using 
@@ -87,7 +87,7 @@ const PrivacyPolicy = () => {
                 <div className="p-3 bg-black text-[#fbb03b] rounded-xl group-hover:bg-[#fbb03b] group-hover:text-black transition-colors">
                   <Eye size={20} />
                 </div>
-                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight">Data Usage</h3>
+                <h3 className="text-lg font-black uppercase  text-zinc-900 tracking-tight">Data Usage</h3>
               </div>
               <p className="text-xs text-gray-500 font-medium leading-loose">
                 Information is only used to process orders, verify merchant authenticity, 
@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
             {/* Section 4: Identity */}
             <div className="group p-8 bg-zinc-900 rounded-[32px] shadow-xl relative overflow-hidden">
                 <Fingerprint size={80} className="absolute -right-4 -bottom-4 opacity-10 text-[#fbb03b] rotate-12" />
-                <h3 className="text-lg font-black uppercase italic text-[#fbb03b] mb-4">Identity Policy</h3>
+                <h3 className="text-lg font-black uppercase  text-[#fbb03b] mb-4">Identity Policy</h3>
                 <p className="text-xs text-gray-400 font-medium leading-loose">
                     We perform KYC (Know Your Customer) checks on all SuK Merchants. 
                     This prevents fraudulent stores and ensures you only buy from verified Nigerian businesses.

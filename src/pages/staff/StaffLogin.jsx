@@ -82,7 +82,7 @@ const StaffLogin = () => {
                             <ShieldCheck size={44} className="text-black" strokeWidth={2.5} />
                         </div>
                     </div>
-                    <h1 className="text-4xl font-[900] text-white italic uppercase tracking-tighter leading-none">
+                    <h1 className="text-4xl font-[900] text-white  uppercase tracking-tighter leading-none">
                         SuK <span className="text-[#fbb03b]">Staff</span>
                     </h1>
                 </header>

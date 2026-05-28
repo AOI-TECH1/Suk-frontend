@@ -62,7 +62,7 @@ const FAQ = () => {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">Help Center</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 Common <span className="text-[#fbb03b]">Questions</span>
             </h1>
         </div>
@@ -76,7 +76,7 @@ const FAQ = () => {
             <div className="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center text-[#fbb03b] mx-auto mb-6">
                 <HelpCircle size={32} />
             </div>
-            <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-4">How can we help?</h2>
+            <h2 className="text-3xl font-black uppercase  tracking-tight text-zinc-900 mb-4">How can we help?</h2>
             <p className="text-gray-400 font-medium text-sm">Find quick answers to the most frequently asked questions below.</p>
           </div>
 
@@ -93,7 +93,7 @@ const FAQ = () => {
                   </div>
                 </summary>
                 <div className="px-6 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <p className="text-sm text-gray-500 font-medium leading-loose border-t border-gray-100 pt-4 italic">
+                  <p className="text-sm text-gray-500 font-medium leading-loose border-t border-gray-100 pt-4 ">
                     {faq.a}
                   </p>
                 </div>

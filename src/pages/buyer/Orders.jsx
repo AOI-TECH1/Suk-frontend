@@ -11,7 +11,7 @@ const BuyerOrders = () => {
 
   return (
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6 font-sans">
-      <h1 className="text-4xl font-black italic uppercase tracking-tighter mb-10">Order History</h1>
+      <h1 className="text-4xl font-black  uppercase tracking-tighter mb-10">Order History</h1>
 
       <div className="space-y-6">
         {/* Sample Order Item */}
@@ -24,7 +24,7 @@ const BuyerOrders = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Order #SK-20942</p>
-                    <h3 className="text-lg font-black italic uppercase">May 15, 2026</h3>
+                    <h3 className="text-lg font-black  uppercase">May 15, 2026</h3>
                     <p className="text-sm font-medium text-gray-500">2 Items • ₦92,500</p>
                   </div>
                </div>

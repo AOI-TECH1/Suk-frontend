@@ -20,7 +20,7 @@ const Terms = () => {
                 <ChevronRight size={10} className="mx-2 text-gray-500" />
                 <span className="text-[#fbb03b]">Legal</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter italic leading-none">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter  leading-none">
                 Terms <span className="text-[#fbb03b]">Of Use</span>
             </h1>
         </div>
@@ -38,7 +38,7 @@ const Terms = () => {
                 </div>
                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">Effective: May 2026</p>
             </div>
-            <h2 className="text-3xl font-black uppercase italic tracking-tight text-zinc-900 mb-6">User Agreement.</h2>
+            <h2 className="text-3xl font-black uppercase  tracking-tight text-zinc-900 mb-6">User Agreement.</h2>
             <p className="text-gray-500 font-medium leading-relaxed text-sm md:text-base">
                 Welcome to SuK. By utilizing our marketplace, you enter into a legally binding contract 
                 with SuK Marketplace NG. Please read these terms carefully to understand your rights and 
@@ -51,8 +51,8 @@ const Terms = () => {
             
             {/* Section 01 */}
             <section className="relative pl-12 sm:pl-16">
-                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">01</span>
-                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4">Acceptance of Terms</h3>
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50  leading-none select-none">01</span>
+                <h3 className="text-lg font-black uppercase  text-zinc-900 tracking-tight mb-4">Acceptance of Terms</h3>
                 <p className="text-xs text-gray-500 font-medium leading-loose">
                     By accessing SuK, you agree to be bound by these Terms of Use. We reserve the 
                     right to modify these terms as the marketplace evolves. Continued use of the 
@@ -62,8 +62,8 @@ const Terms = () => {
 
             {/* Section 02 */}
             <section className="relative pl-12 sm:pl-16">
-                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">02</span>
-                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4">Merchant Integrity</h3>
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50  leading-none select-none">02</span>
+                <h3 className="text-lg font-black uppercase  text-zinc-900 tracking-tight mb-4">Merchant Integrity</h3>
                 <div className="bg-orange-50 p-6 rounded-3xl border border-orange-100 space-y-4">
                     <p className="text-[11px] text-orange-900 font-bold uppercase tracking-widest">Sellers must adhere to:</p>
                     <ul className="space-y-3">
@@ -73,7 +73,7 @@ const Terms = () => {
                             "Strict adherence to shipping timelines",
                             "Accurate visual representation of products"
                         ].map((item, index) => (
-                            <li key={index} className="flex items-center gap-3 text-xs font-bold text-orange-800 italic">
+                            <li key={index} className="flex items-center gap-3 text-xs font-bold text-orange-800 ">
                                 <div className="w-1.5 h-1.5 bg-[#fbb03b] rounded-full"></div> {item}
                             </li>
                         ))}
@@ -83,8 +83,8 @@ const Terms = () => {
 
             {/* Section 03 */}
             <section className="relative pl-12 sm:pl-16">
-                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">03</span>
-                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4">Payments & Escrow</h3>
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50  leading-none select-none">03</span>
+                <h3 className="text-lg font-black uppercase  text-zinc-900 tracking-tight mb-4">Payments & Escrow</h3>
                 <p className="text-xs text-gray-500 font-medium leading-loose">
                     SuK utilizes **Paystack** for secure processing. To protect both parties, 
                     we hold funds in a secure escrow vault. Funds are only released to merchants 
@@ -94,8 +94,8 @@ const Terms = () => {
 
             {/* Section 04 */}
             <section className="relative pl-12 sm:pl-16">
-                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50 italic leading-none select-none">04</span>
-                <h3 className="text-lg font-black uppercase italic text-zinc-900 tracking-tight mb-4 flex items-center gap-2">
+                <span className="absolute left-0 top-0 text-5xl font-[900] text-gray-50  leading-none select-none">04</span>
+                <h3 className="text-lg font-black uppercase  text-zinc-900 tracking-tight mb-4 flex items-center gap-2">
                     Prohibited Conduct <AlertOctagon size={16} className="text-red-500" />
                 </h3>
                 <p className="text-xs text-gray-500 font-medium leading-loose">
@@ -111,8 +111,8 @@ const Terms = () => {
           <div className="mt-20 p-8 bg-zinc-900 rounded-[32px] text-white relative overflow-hidden">
              <FileText size={80} className="absolute -right-4 -bottom-4 opacity-5 rotate-12" />
              <div className="relative z-10">
-                <h4 className="text-[#fbb03b] font-black uppercase italic text-sm mb-4">Limitation of Liability</h4>
-                <p className="text-xs text-gray-400 font-medium leading-relaxed italic">
+                <h4 className="text-[#fbb03b] font-black uppercase  text-sm mb-4">Limitation of Liability</h4>
+                <p className="text-xs text-gray-400 font-medium leading-relaxed ">
                     "SuK Marketplace is a facilitator. While we verify all merchants, we are not 
                     liable for the physical performance of products. Users are encouraged to 
                     review merchant ratings before purchase."
