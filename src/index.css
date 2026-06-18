@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 
+/* Stop the blue color from Bootstrap */
+a {
+    text-decoration: none;
+    color: inherit; /* No !important here */
+}
+
+nav {
+    color: white;
+}
+
 footer a{
     color: white;
     text-decoration: none !important;
