@@ -32,7 +32,8 @@ const Navbar = () => {
   const brandOrange = "#fbb03b"; // SuK Primary
 
   return (
-    <header className="fixed top-0 inset-x-0 z-[100] px-4 pt-4 flex justify-center pointer-events-none font-sans">
+    /* ADJUSTED: Changed pt-4 to pt-1 to shift the navbar higher up */
+    <header className="fixed top-0 inset-x-0 z-[100] px-4 pt-1 flex justify-center pointer-events-none font-sans">
       <nav className="bg-black/90 backdrop-blur-md rounded-full py-2 px-8 md:px-10 flex items-center justify-between text-white shadow-2xl border border-white/10 w-full max-w-6xl pointer-events-auto">
         
         {/* 1. LOGO */}
